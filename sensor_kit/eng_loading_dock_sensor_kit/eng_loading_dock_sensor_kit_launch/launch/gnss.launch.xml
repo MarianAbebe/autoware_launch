@@ -1,0 +1,39 @@
+<launch>
+  <arg name="launch_driver" default="false" description="do launch driver"/>
+
+  <group>
+    <push-ros-namespace namespace="gnss"/>
+
+    <arg name="navsatfix_topic_name" default="/novatel/oem7/fix"/>
+    <arg name="orientation_topic_name" default="/autoware_orientation"/>
+
+    <!-- Match sample_sensor_kit: bag/replay has no /autoware_orientation INS topic. -->
+    <let name="use_gnss_ins_orientation" value="true" if="$(var launch_driver)"/>
+    <let name="use_gnss_ins_orientation" value="false" unless="$(var launch_driver)"/>
+
+    <include file="$(find-pkg-share autoware_gnss_poser)/launch/gnss_poser.launch.xml">
+      <arg name="input_topic_fix" value="$(var navsatfix_topic_name)"/>
+      <arg name="input_topic_orientation" value="$(var orientation_topic_name)"/>
+
+      <arg name="output_topic_gnss_pose" value="pose"/>
+      <!-- Raw pose keeps Autoware LocalCartesian Z≈WGS84 altitude; corrector remaps. -->
+      <arg name="output_topic_gnss_pose_cov" value="pose_with_covariance_raw"/>
+      <arg name="output_topic_gnss_fixed" value="fixed"/>
+      <arg name="use_gnss_ins_orientation" value="$(var use_gnss_ins_orientation)"/>
+    </include>
+
+    <!-- Subtract ENU origin altitude so GNSS Z matches georeferenced PCD (map Z≈0). -->
+    <node
+      pkg="eng_loading_dock_sensor_kit_launch"
+      exec="gnss_pose_altitude_corrector.py"
+      name="eng_dock_gnss_pose_altitude_corrector"
+      output="both"
+    >
+      <param name="input_topic" value="pose_with_covariance_raw"/>
+      <param name="output_topic" value="pose_with_covariance"/>
+      <param name="map_origin_altitude_m" value="1094.784"/>
+      <param name="heading_min_travel_m" value="1.5"/>
+      <param name="heading_yaw_offset_rad" value="0.0"/>
+    </node>
+  </group>
+</launch>

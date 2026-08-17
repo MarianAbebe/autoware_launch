@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="sensor_kit_macro" params="parent x y z roll pitch yaw">
+    <xacro:arg name="config_dir" default="$(find eng_loading_dock_sensor_kit_description)/config"/>
+    <xacro:property name="calibration" value="${xacro.load_yaml('$(arg config_dir)/sensor_kit_calibration.yaml')}"/>
+    <xacro:property name="sensor_kit_base_link" value="sensor_kit_base_link"/>
+
+    <!-- Mount the complete sensor kit to the vehicle.
+         TODO(eng_loading_dock_sensor_kit) The caller-provided transform must
+         come from the measured base_link -> sensor_kit_base_link calibration. -->
+    <joint name="${sensor_kit_base_link}_joint" type="fixed">
+      <origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}"/>
+      <parent link="${parent}"/>
+      <child link="${sensor_kit_base_link}"/>
+    </joint>
+    <link name="${sensor_kit_base_link}"/>
+
+    <!-- Bag-derived Velodyne VLP-16 point cloud frame.
+         TODO(eng_loading_dock_sensor_kit) The zero origin below is only a
+         syntactic placeholder so Xacro/URDF validation can run. Replace it
+         with measured sensor_kit_base_link -> lidar_vlp16_points_link
+    calibration before operating the vehicle. -->
+    <joint name="lidar_vlp16_points_joint" type="fixed">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['lidar_vlp16_points_link']['x']}
+             ${calibration['sensor_kit_base_link']['lidar_vlp16_points_link']['y']}
+             ${calibration['sensor_kit_base_link']['lidar_vlp16_points_link']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['lidar_vlp16_points_link']['roll']}
+             ${calibration['sensor_kit_base_link']['lidar_vlp16_points_link']['pitch']}
+             ${calibration['sensor_kit_base_link']['lidar_vlp16_points_link']['yaw']}"
+      />
+      <parent link="${sensor_kit_base_link}"/>
+      <child link="lidar_vlp16_points_link"/>
+    </joint>
+    <link name="lidar_vlp16_points_link"/>
+
+    <!-- Bag-derived camera 0 frame.
+         TODO(eng_loading_dock_sensor_kit) Replace this placeholder origin
+         with measured sensor_kit_base_link -> cam_0_link calibration. -->
+    <joint name="cam_0_joint" type="fixed">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['cam_0_link']['x']}
+             ${calibration['sensor_kit_base_link']['cam_0_link']['y']}
+             ${calibration['sensor_kit_base_link']['cam_0_link']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['cam_0_link']['roll']}
+             ${calibration['sensor_kit_base_link']['cam_0_link']['pitch']}
+             ${calibration['sensor_kit_base_link']['cam_0_link']['yaw']}"
+      />
+      <parent link="${sensor_kit_base_link}"/>
+      <child link="cam_0_link"/>
+    </joint>
+    <link name="cam_0_link"/>
+
+    <!-- Bag-derived camera 1 frame.
+         TODO(eng_loading_dock_sensor_kit) Replace this placeholder origin
+         with measured sensor_kit_base_link -> cam_1_link calibration. -->
+    <joint name="cam_1_joint" type="fixed">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['cam_1_link']['x']}
+             ${calibration['sensor_kit_base_link']['cam_1_link']['y']}
+             ${calibration['sensor_kit_base_link']['cam_1_link']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['cam_1_link']['roll']}
+             ${calibration['sensor_kit_base_link']['cam_1_link']['pitch']}
+             ${calibration['sensor_kit_base_link']['cam_1_link']['yaw']}"
+      />
+      <parent link="${sensor_kit_base_link}"/>
+      <child link="cam_1_link"/>
+    </joint>
+    <link name="cam_1_link"/>
+
+    <!-- Bag-derived Xsens MTi-680G IMU frame.
+         TODO(eng_loading_dock_sensor_kit) Replace this placeholder origin
+         with measured sensor_kit_base_link -> imu_mti680g_link calibration
+         after verifying the IMU axis convention. -->
+    <joint name="imu_mti680g_joint" type="fixed">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['imu_mti680g_link']['x']}
+             ${calibration['sensor_kit_base_link']['imu_mti680g_link']['y']}
+             ${calibration['sensor_kit_base_link']['imu_mti680g_link']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['imu_mti680g_link']['roll']}
+             ${calibration['sensor_kit_base_link']['imu_mti680g_link']['pitch']}
+             ${calibration['sensor_kit_base_link']['imu_mti680g_link']['yaw']}"
+      />
+      <parent link="${sensor_kit_base_link}"/>
+      <child link="imu_mti680g_link"/>
+    </joint>
+    <link name="imu_mti680g_link"/>
+
+    <!-- Bag-derived NovAtel/OEM7-associated EG320 IMU frame.
+         TODO(eng_loading_dock_sensor_kit) Replace this placeholder origin
+         with measured sensor_kit_base_link -> imu_eg320_link calibration
+         after verifying the IMU axis convention. -->
+    <joint name="imu_eg320_joint" type="fixed">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['imu_eg320_link']['x']}
+             ${calibration['sensor_kit_base_link']['imu_eg320_link']['y']}
+             ${calibration['sensor_kit_base_link']['imu_eg320_link']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['imu_eg320_link']['roll']}
+             ${calibration['sensor_kit_base_link']['imu_eg320_link']['pitch']}
+             ${calibration['sensor_kit_base_link']['imu_eg320_link']['yaw']}"
+      />
+      <parent link="${sensor_kit_base_link}"/>
+      <child link="imu_eg320_link"/>
+    </joint>
+    <link name="imu_eg320_link"/>
+
+    <!-- Bag-derived MCU ICM-20948 IMU frame.
+         TODO(eng_loading_dock_sensor_kit) Replace this placeholder origin
+         with measured sensor_kit_base_link -> imu_icm20948_link calibration
+         after verifying the IMU axis convention. -->
+    <joint name="imu_icm20948_joint" type="fixed">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['imu_icm20948_link']['x']}
+             ${calibration['sensor_kit_base_link']['imu_icm20948_link']['y']}
+             ${calibration['sensor_kit_base_link']['imu_icm20948_link']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['imu_icm20948_link']['roll']}
+             ${calibration['sensor_kit_base_link']['imu_icm20948_link']['pitch']}
+             ${calibration['sensor_kit_base_link']['imu_icm20948_link']['yaw']}"
+      />
+      <parent link="${sensor_kit_base_link}"/>
+      <child link="imu_icm20948_link"/>
+    </joint>
+    <link name="imu_icm20948_link"/>
+
+    <!-- Bag-derived NovAtel OEM7 GNSS antenna/receiver frame.
+         TODO(eng_loading_dock_sensor_kit) Replace this placeholder origin
+         with measured sensor_kit_base_link -> gnss_oem7_link phase-center
+         calibration, not only the antenna housing position. -->
+    <joint name="gnss_oem7_joint" type="fixed">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['gnss_oem7_link']['x']}
+             ${calibration['sensor_kit_base_link']['gnss_oem7_link']['y']}
+             ${calibration['sensor_kit_base_link']['gnss_oem7_link']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['gnss_oem7_link']['roll']}
+             ${calibration['sensor_kit_base_link']['gnss_oem7_link']['pitch']}
+             ${calibration['sensor_kit_base_link']['gnss_oem7_link']['yaw']}"
+      />
+      <parent link="${sensor_kit_base_link}"/>
+      <child link="gnss_oem7_link"/>
+    </joint>
+    <link name="gnss_oem7_link"/>
+
+    <!-- Bag-derived ZED-F9P GNSS antenna/receiver frame.
+         TODO(eng_loading_dock_sensor_kit) Replace this placeholder origin
+         with measured sensor_kit_base_link -> gnss_f9p_link phase-center
+         calibration, not only the antenna housing position. -->
+    <joint name="gnss_f9p_joint" type="fixed">
+      <origin
+        xyz="${calibration['sensor_kit_base_link']['gnss_f9p_link']['x']}
+             ${calibration['sensor_kit_base_link']['gnss_f9p_link']['y']}
+             ${calibration['sensor_kit_base_link']['gnss_f9p_link']['z']}"
+        rpy="${calibration['sensor_kit_base_link']['gnss_f9p_link']['roll']}
+             ${calibration['sensor_kit_base_link']['gnss_f9p_link']['pitch']}
+             ${calibration['sensor_kit_base_link']['gnss_f9p_link']['yaw']}"
+      />
+      <parent link="${sensor_kit_base_link}"/>
+      <child link="gnss_f9p_link"/>
+    </joint>
+    <link name="gnss_f9p_link"/>
+  </xacro:macro>
+</robot>

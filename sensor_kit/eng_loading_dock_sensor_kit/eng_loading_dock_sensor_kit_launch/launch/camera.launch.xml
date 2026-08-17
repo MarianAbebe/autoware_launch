@@ -1,0 +1,59 @@
+<launch>
+  <arg name="launch_driver" default="true" description="do launch camera drivers"/>
+
+  <group>
+    <push-ros-namespace namespace="camera"/>
+
+    <group>
+      <push-ros-namespace namespace="cam_0"/>
+
+      <!--
+        TODO(eng_loading_dock_sensor_kit): Insert the cam_0 camera driver
+        include here.
+
+        Bag-derived facts:
+          - recorded image topic: /cam_0/image_raw
+          - recorded message type: sensor_msgs/msg/Image
+          - recorded frame_id: cam_0_link
+          - recorded image format: 1440x1080 bayer_rggb8
+
+        Required future decisions and measured/generated inputs:
+          - camera driver package and launch file
+          - camera model and driver parameter file
+          - camera serial number or transport address
+          - image transport configuration
+          - camera_info publisher or driver camera_info output
+          - intrinsic calibration file: data/camera/cam_0_camera_info.yaml
+
+        This wrapper intentionally does not choose Lucid, FLIR, Basler, USB,
+        GenICam, or any other camera driver yet.
+      -->
+    </group>
+
+    <group>
+      <push-ros-namespace namespace="cam_1"/>
+
+      <!--
+        TODO(eng_loading_dock_sensor_kit): Insert the cam_1 camera driver
+        include here.
+
+        Bag-derived facts:
+          - recorded image topic: /cam_1/image_raw
+          - recorded message type: sensor_msgs/msg/Image
+          - recorded frame_id: cam_1_link
+          - recorded image format: 1440x1080 bayer_rggb8
+
+        Required future decisions and measured/generated inputs:
+          - camera driver package and launch file
+          - camera model and driver parameter file
+          - camera serial number or transport address
+          - image transport configuration
+          - camera_info publisher or driver camera_info output
+          - intrinsic calibration file: data/camera/cam_1_camera_info.yaml
+
+        This wrapper intentionally does not choose Lucid, FLIR, Basler, USB,
+        GenICam, or any other camera driver yet.
+      -->
+    </group>
+  </group>
+</launch>

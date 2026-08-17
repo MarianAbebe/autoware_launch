@@ -24,6 +24,8 @@
     </group>
 
     <!-- NavSatFix to MGRS Pose -->
+    <let name="use_gnss_ins_orientation" value="true" if="$(var launch_driver)"/>
+    <let name="use_gnss_ins_orientation" value="false" unless="$(var launch_driver)"/>
     <include file="$(find-pkg-share autoware_gnss_poser)/launch/gnss_poser.launch.xml">
       <arg name="input_topic_fix" value="$(var navsatfix_topic_name)"/>
       <arg name="input_topic_orientation" value="$(var orientation_topic_name)"/>
@@ -32,7 +34,7 @@
       <arg name="output_topic_gnss_pose_cov" value="pose_with_covariance"/>
       <arg name="output_topic_gnss_fixed" value="fixed"/>
 
-      <arg name="use_gnss_ins_orientation" value="true"/>
+      <arg name="use_gnss_ins_orientation" value="$(var use_gnss_ins_orientation)"/>
     </include>
   </group>
 </launch>

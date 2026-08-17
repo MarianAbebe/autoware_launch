@@ -1,0 +1,3 @@
+# TODO: Add calibration and correction YAMLs only after physical measurement
+# or calibration. Required future files include sensors_calibration.yaml,
+# sensor_kit_calibration.yaml, and sensor-specific correction parameters.

@@ -7,6 +7,17 @@
 
   <!-- When gnss_enabled is false, automatic_pose_initializer will not run, only manual initial position estimation is available. -->
   <arg name="gnss_enabled" default="true" description="gnss availability for initial position estimation"/>
+  <!-- Logging-sim should leave this false: auto-init races before lidar is warm and hangs NDT align on Jetson. -->
+  <arg
+    name="launch_automatic_pose_initializer"
+    default="true"
+    description="If true and gnss_enabled, launch automatic_pose_initializer. Prefer false for logging_simulation; use initialize_after_lidar_ready.sh instead."
+  />
+  <arg
+    name="ndt_input_initial_pose_topic"
+    default="/localization/pose_twist_fusion_filter/biased_pose_with_covariance"
+    description="Topic for NDT scan matcher initial pose input"
+  />
 
   <!-- split string with underscores -->
   <let name="available_args" value="[\'ndt\',\'yabloc\',\'eagleye\',\'artag\',\'lidar-marker\']"/>
@@ -39,6 +50,7 @@
     <let name="ndt_output_pose_with_cov_topic_name" unless="$(eval &quot;'$(var use_autoware_pose_covariance_modifier)'=='true'&quot;)" value="/localization/pose_estimator/pose_with_covariance"/>
     <include file="$(find-pkg-share tier4_localization_launch)/launch/pose_twist_estimator/ndt_scan_matcher.launch.xml">
       <arg name="output_pose_with_covariance_topic" value="$(var ndt_output_pose_with_cov_topic_name)"/>
+      <arg name="input_initial_pose_topic" value="$(var ndt_input_initial_pose_topic)"/>
     </include>
 
     <!-- Autoware Pose Covariance Modifier Node Launch -->
@@ -137,8 +149,8 @@
       <arg name="sub_gnss_pose_cov" value="$(var sub_gnss_pose_cov)"/>
     </include>
 
-    <!-- automatic_pose_initializer -->
-    <group if="$(var gnss_enabled)">
+    <!-- automatic_pose_initializer (gated: needs GNSS + explicit launch flag) -->
+    <group if="$(eval &quot;'$(var gnss_enabled)'=='true' and '$(var launch_automatic_pose_initializer)'=='true'&quot;)">
       <include file="$(find-pkg-share autoware_automatic_pose_initializer)/launch/automatic_pose_initializer.launch.xml"/>
     </group>
 

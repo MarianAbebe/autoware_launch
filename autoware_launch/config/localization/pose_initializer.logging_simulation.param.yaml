@@ -1,0 +1,50 @@
+# {OVERRIDE: logging simulation bag replay}
+# NDT align is enabled so live lidar locks to the pointcloud map (GNSS-only seed
+# leaves an offset/yaw error that continuous NDT often cannot fully correct).
+# Guardrails against the Jetson hang (auto-init racing cold lidar + 200-particle NDT):
+#   - ndt_enabled: true (keep NDT for alignment / autonomous driving)
+#   - align_timeout_sec: pose_initializer gives up instead of blocking forever
+#   - logging_simulator.launch.xml sets launch_automatic_pose_initializer:=false
+#   - play_bag_interactive.sh → initialize_after_lidar_ready.sh after lidar+GNSS+map
+#   - ndt_scan_matcher.logging_simulation.param.yaml uses fewer Monte Carlo particles
+# Source: pose_initializer.param.yaml
+
+/**:
+  ros__parameters:
+    user_defined_initial_pose:
+      enable: $(var user_defined_initial_pose/enable)
+      pose: $(var user_defined_initial_pose/pose)
+
+    gnss_pose_timeout: 120.0 # [sec] {OVERRIDE: logging simulation bag replay}
+    stop_check_duration: 3.0 # [sec]
+    pose_error_threshold: 5.0 # [m]
+    pose_error_check_enabled: false # check initial pose error with gnss
+    ekf_enabled: $(var ekf_enabled)
+    gnss_enabled: $(var gnss_enabled)
+    yabloc_enabled: false # {OVERRIDE: skip YabLoc align during logging-sim init}
+    ndt_enabled: true # {OVERRIDE: NDT-align GNSS seed once lidar is warm}
+    stop_check_enabled: false # {OVERRIDE: bag vehicle may be moving}
+    # 48-particle Monte Carlo on Orin can take ~60–120s; keep headroom vs hang-forever.
+    align_timeout_sec: 150.0 # [sec] {OVERRIDE: never hang forever on Jetson NDT align}
+
+    # from gnss
+    gnss_particle_covariance:
+      [
+        1.0, 0.0, 0.0,  0.0,  0.0,  0.0,
+        0.0, 1.0, 0.0,  0.0,  0.0,  0.0,
+        0.0, 0.0, 0.01, 0.0,  0.0,  0.0,
+        0.0, 0.0, 0.0,  0.01, 0.0,  0.0,
+        0.0, 0.0, 0.0,  0.0,  0.01, 0.0,
+        0.0, 0.0, 0.0,  0.0,  0.0,  10.0,
+      ]
+
+    # output
+    output_pose_covariance:
+      [
+        1.0, 0.0, 0.0,  0.0,  0.0,  0.0,
+        0.0, 1.0, 0.0,  0.0,  0.0,  0.0,
+        0.0, 0.0, 0.01, 0.0,  0.0,  0.0,
+        0.0, 0.0, 0.0,  0.01, 0.0,  0.0,
+        0.0, 0.0, 0.0,  0.0,  0.01, 0.0,
+        0.0, 0.0, 0.0,  0.0,  0.0,  0.2,
+      ]

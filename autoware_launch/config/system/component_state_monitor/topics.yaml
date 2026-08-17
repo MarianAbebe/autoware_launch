@@ -90,7 +90,7 @@
     timeout: 0.0
 
 - module: planning
-  mode: [online, logging_simulation, planning_simulation]
+  mode: [online, logging_simulation]
   type: autonomous
   args:
     node_name_suffix: scenario_planning_trajectory
@@ -101,6 +101,21 @@
     warn_rate: 5.0
     error_rate: 1.0
     timeout: 1.0
+
+# Jetson planning_simulator: LaneDriving trajectory is ~0.5 Hz with 3–4 s header delay.
+# Keep the 1.0 s / 1 Hz gate for online (eng_loading_dock) so real-vehicle checks stay strict.
+- module: planning
+  mode: [planning_simulation]
+  type: autonomous
+  args:
+    node_name_suffix: scenario_planning_trajectory
+    topic: /planning/trajectory
+    topic_type: autoware_planning_msgs/msg/Trajectory
+    best_effort: false
+    transient_local: false
+    warn_rate: 0.5
+    error_rate: 0.2
+    timeout: 5.0
 
 - module: control
   mode: [online, logging_simulation, planning_simulation]

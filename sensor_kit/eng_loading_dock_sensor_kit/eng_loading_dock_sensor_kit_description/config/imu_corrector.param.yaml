@@ -1,0 +1,12 @@
+# TODO(eng_loading_dock_sensor_kit): Replace every null below with values
+# generated from the actual Version 1 IMU characterization.
+#
+# Schema is the Autoware imu_corrector ROS parameter file schema.
+/**:
+  ros__parameters:
+    angular_velocity_stddev_xx: null # TODO: angular velocity standard deviation around IMU x-axis.
+    angular_velocity_stddev_yy: null # TODO: angular velocity standard deviation around IMU y-axis.
+    angular_velocity_stddev_zz: null # TODO: angular velocity standard deviation around IMU z-axis.
+    angular_velocity_offset_x: null # TODO: stationary gyro bias offset around IMU x-axis.
+    angular_velocity_offset_y: null # TODO: stationary gyro bias offset around IMU y-axis.
+    angular_velocity_offset_z: null # TODO: stationary gyro bias offset around IMU z-axis.

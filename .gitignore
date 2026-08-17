@@ -16,3 +16,4 @@ log/
 
 #prettier
 node_modules/
+vehicle/ugv_vehicle_launch/ugv_vehicle_description/mesh/ugv_body.stl

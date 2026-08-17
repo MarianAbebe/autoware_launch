@@ -19,6 +19,14 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" exec="robot_state_publisher">
       <param name="robot_description" value="$(command 'xacro $(var model_file) vehicle_model:=$(var vehicle_model) sensor_model:=$(var sensor_model) config_dir:=$(var config_dir)' 'warn')"/>
     </node>
+    <node
+      name="fixed_tf_republisher"
+      pkg="tier4_vehicle_launch"
+      exec="fixed_tf_republisher.py"
+      if="$(var use_sim_time)"
+    >
+      <param name="robot_description" value="$(command 'xacro $(var model_file) vehicle_model:=$(var vehicle_model) sensor_model:=$(var sensor_model) config_dir:=$(var config_dir)' 'warn')"/>
+    </node>
   </group>
 
   <!-- vehicle interface -->

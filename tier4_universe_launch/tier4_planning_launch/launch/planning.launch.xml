@@ -5,6 +5,8 @@
   <arg name="mission_planner_param_path"/>
   <!-- parking -->
   <arg name="freespace_planner_param_path"/>
+  <!-- scenario selector -->
+  <arg name="scenario_selector_param_path" default="$(find-pkg-share autoware_scenario_selector)/config/scenario_selector.param.yaml"/>
   <!-- planning validator -->
   <arg name="planning_validator_param_path"/>
   <arg name="planning_validator_latency_checker_param_path"/>
@@ -46,6 +48,7 @@
         <arg name="is_simulation" value="$(var is_simulation)"/>
         <arg name="input_objects_topic_name" value="$(var input_objects_topic_name)"/>
         <arg name="input_pointcloud_topic_name" value="$(var input_pointcloud_topic_name)"/>
+        <arg name="scenario_selector_param_path" value="$(var scenario_selector_param_path)"/>
       </include>
     </group>
 

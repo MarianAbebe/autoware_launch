@@ -1,0 +1,15 @@
+<launch>
+
+  <arg name="launch_driver" default="true"/>
+
+  <include
+    if="$(var launch_driver)"
+    file="$(find-pkg-share flir_ros_inml)/launch/camera_array.launch.py">
+
+    <arg
+      name="config"
+      value="$(find-pkg-share flir_ros_inml)/config/ugv/ugv_camera_array.yaml"/>
+
+  </include>
+
+</launch>

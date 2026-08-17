@@ -26,6 +26,7 @@
     yabloc_enabled: $(var yabloc_enabled)
     ndt_enabled: $(var ndt_enabled)
     stop_check_enabled: $(var stop_check_enabled)
+    align_timeout_sec: 90.0 # [sec] {OVERRIDE: never hang forever on NDT/YabLoc align}
 
     # from gnss
     gnss_particle_covariance:

@@ -1,0 +1,22 @@
+/**:
+  ros__parameters:
+    # -------------------------------------------------------------------------
+    # TEMPORARY PLACEHOLDER VALUES
+    # Replace with CAD measurements before final deployment.
+    # -------------------------------------------------------------------------
+
+    wheel_radius: 0.15
+    wheel_width: 0.08
+
+    wheel_base: 1.20
+    wheel_tread: 0.90
+
+    front_overhang: 0.40
+    rear_overhang: 0.40
+
+    left_overhang: 0.15
+    right_overhang: 0.15
+
+    vehicle_height: 1.00
+
+    max_steer_angle: 0.70

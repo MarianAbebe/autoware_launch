@@ -1,0 +1,27 @@
+<launch>
+  <arg name="launch_driver" default="true"/>
+  <arg name="host_ip" default="192.168.1.10"/>
+  <arg name="sensor_ip" default="192.168.1.201"/>
+
+  <arg name="vehicle_mirror_param_file"/>
+  <arg name="pointcloud_container_name" default="pointcloud_container"/>
+
+  <group>
+    <push-ros-namespace namespace="lidar"/>
+
+    <group>
+      <push-ros-namespace namespace="top"/>
+
+      <include file="$(find-pkg-share ugv_sensor_kit_launch)/launch/hesai_Pandar128E4X.launch.xml">
+        <arg name="launch_driver" value="$(var launch_driver)"/>
+
+        <arg name="sensor_frame" value="pandar128"/>
+        <arg name="host_ip" value="$(var host_ip)"/>
+        <arg name="sensor_ip" value="$(var sensor_ip)"/>
+
+        <arg name="vehicle_mirror_param_file" value="$(var vehicle_mirror_param_file)"/>
+        <arg name="container_name" value="$(var pointcloud_container_name)"/>
+      </include>
+    </group>
+  </group>
+</launch>

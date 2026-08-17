@@ -71,6 +71,18 @@
       <arg name="pointcloud_map_file" value="$(var pointcloud_map_file)"/>
       <!-- Sensing -->
       <arg name="launch_sensing_driver" value="false"/>
+      <!-- Localization: GNSS seed + NDT align, but do NOT auto-init before lidar is warm.
+           play_bag_interactive.sh / initialize_after_lidar_ready.sh trigger init once sensors are ready.
+           Jetson-light NDT particles keep align under align_timeout_sec. -->
+      <arg
+        name="pose_initializer_param_path"
+        value="$(find-pkg-share autoware_launch)/config/localization/pose_initializer.logging_simulation.param.yaml"
+      />
+      <arg
+        name="ndt_scan_matcher_param_path"
+        value="$(find-pkg-share autoware_launch)/config/localization/ndt_scan_matcher/ndt_scan_matcher.logging_simulation.param.yaml"
+      />
+      <arg name="launch_automatic_pose_initializer" value="false"/>
     </include>
   </group>
 </launch>

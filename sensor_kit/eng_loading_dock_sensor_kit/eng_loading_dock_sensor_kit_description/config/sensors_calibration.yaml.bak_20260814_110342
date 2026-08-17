@@ -1,0 +1,15 @@
+# Estimated initial calibration for bag replay. Replace with measured
+# base_link -> sensor_kit_base_link calibration values before deployment.
+#
+# Schema: parent_frame -> child_frame -> {x, y, z, roll, pitch, yaw}
+# Units: x/y/z in meters, roll/pitch/yaw in radians.
+base_link:
+  # Transform from the vehicle base frame to the root frame of the removable
+  # or logical sensor kit. This mounts the entire sensor kit onto the vehicle.
+  sensor_kit_base_link:
+    x: 0.0 # Estimated: keep kit root coincident with base_link until measured.
+    y: 0.0 # Estimated: keep kit root coincident with base_link until measured.
+    z: 0.0 # Estimated: sensor heights are represented in sensor_kit_calibration.yaml.
+    roll: 0.0 # Estimated.
+    pitch: 0.0 # Estimated.
+    yaw: 0.0 # Estimated.

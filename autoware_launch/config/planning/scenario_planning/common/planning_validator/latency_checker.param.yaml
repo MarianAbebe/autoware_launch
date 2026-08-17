@@ -15,5 +15,5 @@
   ros__parameters:
     latency_checker:
       enable: true
-      threshold: 1.0
+      threshold: 5.0  # {OVERRIDE: Jetson planning_simulator trajectory age is 3.3-4.2s vs default 1.0s}
       is_critical: false

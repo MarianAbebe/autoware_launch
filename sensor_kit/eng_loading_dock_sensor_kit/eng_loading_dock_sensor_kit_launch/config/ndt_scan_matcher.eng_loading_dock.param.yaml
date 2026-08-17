@@ -1,0 +1,67 @@
+# Engineering Loading Dock NDT overrides (bag replay / scale-corrected KISS map).
+# Based on autoware_launch logging_simulation ndt params with lower score gate so
+# continuous NDT publishes after GNSS seed (KISS map scores ~1.8–2.2).
+
+/**:
+  ros__parameters:
+    frame:
+      base_frame: "base_link"
+      ndt_base_frame: "ndt_base_link"
+      map_frame: "map"
+
+    sensor_points:
+      timeout_sec: 5.0
+      required_distance: 5.0
+
+    ndt:
+      trans_epsilon: 0.01
+      step_size: 0.1
+      resolution: 2.0
+      max_iterations: 30
+      num_threads: 6
+      regularization:
+        enable: false
+        scale_factor: 0.01
+
+    initial_pose_estimation:
+      particles_num: 48
+      n_startup_trials: 24
+
+    validation:
+      # Bag replay: EKF biased_pose uses /clock now(); allow lidar header lag under load.
+      initial_pose_timeout_sec: 30.0
+      initial_pose_distance_tolerance_m: 15.0
+      initial_to_result_distance_tolerance_m: 5.0
+      critical_upper_bound_exe_time_ms: 200.0
+      skipping_publish_num: 8
+
+    score_estimation:
+      converged_param_type: 1
+      converged_param_transform_probability: 3.0
+      converged_param_nearest_voxel_transformation_likelihood: 1.5
+      no_ground_points:
+        enable: false
+        z_margin_for_ground_removal: 0.8
+
+    covariance:
+      output_pose_covariance:
+        [
+          0.0225, 0.0,   0.0,   0.0,      0.0,      0.0,
+          0.0,   0.0225, 0.0,   0.0,      0.0,      0.0,
+          0.0,   0.0,   0.0225, 0.0,      0.0,      0.0,
+          0.0,   0.0,   0.0,   0.000625, 0.0,      0.0,
+          0.0,   0.0,   0.0,   0.0,      0.000625, 0.0,
+          0.0,   0.0,   0.0,   0.0,      0.0,      0.000625,
+        ]
+      covariance_estimation:
+        covariance_estimation_type: 0
+        initial_pose_offset_model_x: [0.0, 0.0, 0.5, -0.5, 1.0, -1.0]
+        initial_pose_offset_model_y: [0.5, -0.5, 0.0, 0.0, 0.0, 0.0]
+        temperature: 0.05
+        scale_factor: 1.0
+
+    dynamic_map_loading:
+      update_distance: 20.0
+      map_radius: 150.0
+      lidar_radius: 100.0
+      publish_loaded_map: false

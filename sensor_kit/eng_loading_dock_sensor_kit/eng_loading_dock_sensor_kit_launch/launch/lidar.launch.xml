@@ -1,0 +1,56 @@
+<launch>
+  <arg name="launch_driver" default="false" description="do launch driver"/>
+  <arg name="vehicle_mirror_param_file" description="path to the file of vehicle mirror position yaml"/>
+  <arg name="pointcloud_container_name" default="pointcloud_container"/>
+
+  <group>
+    <push-ros-namespace namespace="lidar"/>
+
+    <group>
+      <push-ros-namespace namespace="top"/>
+      <include file="$(find-pkg-share common_sensor_launch)/launch/velodyne_VLP16.launch.xml">
+        <arg name="max_range" value="130.0"/>
+        <arg name="min_range" value="0.4"/>
+        <arg name="sensor_frame" value="lidar_vlp16_points_link"/>
+        <arg name="sensor_ip" value="127.0.0.1"/>
+        <arg name="host_ip" value="127.0.0.1"/>
+        <arg name="data_port" value="2368"/>
+        <arg name="input_packets_topic" value="/velodyne_packets"/>
+        <arg name="scan_phase" value="0.0"/>
+        <arg name="cloud_min_angle" value="0"/>
+        <arg name="cloud_max_angle" value="360"/>
+        <arg name="launch_driver" value="$(var launch_driver)"/>
+        <arg name="vehicle_mirror_param_file" value="$(var vehicle_mirror_param_file)"/>
+        <arg name="container_name" value="$(var pointcloud_container_name)"/>
+        <arg name="udp_only" value="true"/>
+      </include>
+    </group>
+
+    <!-- Live driver path: Nebula already emits PointXYZIRC/AEDT → concat. -->
+    <group if="$(var launch_driver)">
+      <load_composable_node target="$(var pointcloud_container_name)">
+        <composable_node pkg="topic_tools" plugin="topic_tools::RelayNode" name="pointcloud_relay_ring_to_concat" namespace="concatenated">
+          <param name="input_topic" value="/sensing/lidar/top/pointcloud_before_sync"/>
+          <param name="output_topic" value="/sensing/lidar/concatenated/pointcloud"/>
+          <param name="type" value="sensor_msgs/msg/PointCloud2"/>
+          <param name="reliability" value="best_effort"/>
+        </composable_node>
+      </load_composable_node>
+    </group>
+
+    <!-- Bag replay path: /velodyne_points is legacy XYZIR (float intensity).
+         Convert to PointXYZIRC so localization crop_box/NDT accept the cloud.
+         Do not also relay Nebula ring output (avoids dual publishers / mixed layouts). -->
+    <group unless="$(var launch_driver)">
+      <node
+        pkg="eng_loading_dock_sensor_kit_launch"
+        exec="velodyne_points_to_xyzirc.py"
+        name="eng_dock_velodyne_points_to_xyzirc"
+        output="both"
+      >
+        <param name="input_topic" value="/velodyne_points"/>
+        <param name="output_topic" value="/sensing/lidar/concatenated/pointcloud"/>
+      </node>
+    </group>
+  </group>
+</launch>

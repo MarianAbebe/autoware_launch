@@ -1,0 +1,20 @@
+# TODO(eng_loading_dock_sensor_kit): Replace these placeholders with the
+# selected cam_1 driver parameters once the physical camera model and transport
+# are confirmed.
+#
+# Bag-derived facts:
+#   topic: /cam_1/image_raw
+#   type: sensor_msgs/msg/Image
+#   frame_id: cam_1_link
+#   image: 1440x1080 bayer_rggb8
+/**:
+  ros__parameters:
+    camera_model: TODO
+    serial_number: TODO
+    frame_id: cam_1_link
+    image_topic: image_raw
+    camera_info_url: package://eng_loading_dock_sensor_kit_launch/data/camera/cam_1_camera_info.yaml
+    image_width: 1440
+    image_height: 1080
+    pixel_encoding: bayer_rggb8
+    transport: TODO

@@ -128,8 +128,7 @@ def launch_setup(context, *args, **kwargs):
                 },
             ],
             remappings=[
-                # cSpell:ignore knzo25
-                # TODO(knzo25): fix the remapping once nebula gets updated
+                ("velodyne_packets", LaunchConfiguration("input_packets_topic")),
                 ("velodyne_points", "pointcloud_raw_ex"),
                 # ("robosense_points", "pointcloud_raw_ex"), #for robosense
                 # ("pandar_points", "pointcloud_raw_ex"), # for hesai
@@ -256,6 +255,7 @@ def generate_launch_description():
     add_launch_arg("cloud_min_angle", "0", "minimum view angle setting on device")
     add_launch_arg("cloud_max_angle", "360", "maximum view angle setting on device")
     add_launch_arg("data_port", "2368", "device data port number")
+    add_launch_arg("input_packets_topic", "velodyne_packets", "input/output VelodyneScan topic")
     add_launch_arg("gnss_port", "2380", "device gnss port number")
     add_launch_arg("packet_mtu_size", "1500", "packet mtu size")
     add_launch_arg("rotation_speed", "600", "rotational frequency")

@@ -1,6 +1,27 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="loc_config_path" default="$(find-pkg-share autoware_launch)/config/localization"/>
+  <arg
+    name="pose_initializer_param_path"
+    default="$(var loc_config_path)/pose_initializer.param.yaml"
+    description="pose initializer parameter file path"
+  />
+  <arg
+    name="ndt_scan_matcher_param_path"
+    default="$(var loc_config_path)/ndt_scan_matcher/ndt_scan_matcher.param.yaml"
+    description="NDT scan matcher parameter file path"
+  />
+  <arg
+    name="launch_automatic_pose_initializer"
+    default="true"
+    description="Launch automatic_pose_initializer (disable for logging_simulation)"
+  />
+  <arg
+    name="ndt_input_initial_pose_topic"
+    default="/localization/pose_twist_fusion_filter/biased_pose_with_covariance"
+    description="NDT scan matcher initial pose input topic"
+  />
+  <arg name="system_run_mode" default="online" description="run mode in system"/>
   <arg name="pose_source" default="ndt" description="select pose_estimator: ndt, yabloc, eagleye"/>
   <arg name="twist_source" default="gyro_odom" description="select twist_estimator. gyro_odom, eagleye"/>
   <arg name="input_pointcloud" default="/sensing/lidar/concatenated/pointcloud" description="The topic will be used in the localization util module"/>
@@ -45,11 +66,13 @@
       <arg name="ekf_localizer_param_path" value="$(var loc_config_path)/ekf_localizer.param.yaml"/>
       <arg name="stop_filter_param_path" value="$(var loc_config_path)/stop_filter.param.yaml"/>
       <arg name="pose_instability_detector_param_path" value="$(var loc_config_path)/pose_instability_detector.param.yaml"/>
-      <arg name="pose_initializer_param_path" value="$(var loc_config_path)/pose_initializer.param.yaml"/>
+      <arg name="pose_initializer_param_path" value="$(var pose_initializer_param_path)"/>
+      <arg name="launch_automatic_pose_initializer" value="$(var launch_automatic_pose_initializer)"/>
       <arg name="twist2accel_param_path" value="$(var loc_config_path)/twist2accel.param.yaml"/>
+      <arg name="ndt_input_initial_pose_topic" value="$(var ndt_input_initial_pose_topic)"/>
 
       <!-- parameter paths for ndt -->
-      <arg name="ndt_scan_matcher/ndt_scan_matcher_param_path" value="$(var loc_config_path)/ndt_scan_matcher/ndt_scan_matcher.param.yaml"/>
+      <arg name="ndt_scan_matcher/ndt_scan_matcher_param_path" value="$(var ndt_scan_matcher_param_path)"/>
       <arg
         name="ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path"
         value="$(var loc_config_path)/ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range.param.yaml"

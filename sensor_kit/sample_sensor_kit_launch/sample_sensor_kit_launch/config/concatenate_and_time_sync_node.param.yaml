@@ -3,7 +3,7 @@
     debug_mode: false
     rosbag_length: 10.0
     maximum_queue_size: 5
-    timeout_sec: 0.2
+    timeout_sec: 5.0
     is_motion_compensated: true
     publish_synchronized_pointcloud: true
     keep_input_frame_in_synchronized_pointcloud: true
@@ -17,6 +17,6 @@
                 ]
     output_frame: base_link
     matching_strategy:
-      type: advanced
+      type: naive
       lidar_timestamp_offsets: [0.0, 0.015, 0.016]
-      lidar_timestamp_noise_window: [0.01, 0.01, 0.01]
+      lidar_timestamp_noise_window: [1.0, 1.0, 1.0]

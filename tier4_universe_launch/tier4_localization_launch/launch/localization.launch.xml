@@ -4,6 +4,17 @@
   <arg name="twist_source"/>
   <arg name="initial_pose"/>
   <arg name="system_run_mode"/>
+  <arg name="launch_automatic_pose_initializer" default="true"/>
+  <arg
+    name="ndt_input_initial_pose_topic"
+    default="/localization/pose_twist_fusion_filter/biased_pose_with_covariance"
+    description="Topic for NDT scan matcher initial pose input"
+  />
+  <arg
+    name="output_biased_pose_with_covariance_name"
+    default="biased_pose_with_covariance"
+    description="Relative EKF biased pose topic under pose_twist_fusion_filter"
+  />
 
   <!-- parameter paths for ndt -->
   <arg name="ndt_scan_matcher/pointcloud_preprocessor/crop_box_filter_measurement_range_param_path"/>
@@ -31,12 +42,16 @@
     <!-- pose_twist_estimator module -->
     <include file="$(find-pkg-share tier4_localization_launch)/launch/pose_twist_estimator/pose_twist_estimator.launch.xml">
       <arg name="localization_pointcloud_container_name" value="$(var localization_pointcloud_container_name)"/>
+      <arg name="launch_automatic_pose_initializer" value="$(var launch_automatic_pose_initializer)"/>
+      <arg name="ndt_input_initial_pose_topic" value="$(var ndt_input_initial_pose_topic)"/>
     </include>
 
     <!-- pose_twist_fusion_filter module -->
     <group>
       <push-ros-namespace namespace="pose_twist_fusion_filter"/>
-      <include file="$(find-pkg-share tier4_localization_launch)/launch/pose_twist_fusion_filter/pose_twist_fusion_filter.launch.xml"/>
+      <include file="$(find-pkg-share tier4_localization_launch)/launch/pose_twist_fusion_filter/pose_twist_fusion_filter.launch.xml">
+        <arg name="output_biased_pose_with_covariance_name" value="$(var output_biased_pose_with_covariance_name)"/>
+      </include>
     </group>
 
     <!-- localization_error_monitor_module -->

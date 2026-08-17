@@ -1,0 +1,27 @@
+# TODO(eng_loading_dock_sensor_kit): Replace this placeholder with calibrated
+# cam_1 intrinsics generated from the physical Engineering Loading Dock camera.
+#
+# Bag-derived facts:
+#   image topic: /cam_1/image_raw
+#   frame_id: cam_1_link
+#   image: 1440x1080 bayer_rggb8
+image_width: 1440
+image_height: 1080
+camera_name: cam_1
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO]
+distortion_model: TODO
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [TODO, TODO, TODO, TODO, TODO]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO, TODO]

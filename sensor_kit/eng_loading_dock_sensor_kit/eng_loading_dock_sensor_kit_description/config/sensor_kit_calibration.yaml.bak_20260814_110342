@@ -1,0 +1,85 @@
+# Estimated initial calibration for bag replay. Replace every estimated value
+# below with measured sensor_kit_base_link -> sensor frame calibration values
+# before deployment.
+#
+# Schema: parent_frame -> child_frame -> {x, y, z, roll, pitch, yaw}
+# Units: x/y/z in meters, roll/pitch/yaw in radians.
+sensor_kit_base_link:
+  # Transform from the sensor kit root to the bag-derived Velodyne VLP-16
+  # point cloud frame.
+  # The child frame name must match urdf/sensor_kit.xacro.
+  lidar_vlp16_points_link:
+    x: 0.0 # Estimated: horizontal lever arm not measured yet.
+    y: 0.0 # Estimated: horizontal lever arm not measured yet.
+    z: 2.05 # Estimated from map note: GNSS antenna/map zero is ~2.05 m above ground.
+    roll: 0.0 # Estimated.
+    pitch: 0.0 # Estimated.
+    yaw: 0.0 # Estimated.
+
+  # Transform from the sensor kit root to bag-derived camera 0.
+  cam_0_link:
+    x: 0.0 # TODO: measured longitudinal offset to the cam_0 body frame.
+    y: 0.0 # TODO: measured lateral offset to the cam_0 body frame.
+    z: 0.0 # TODO: measured vertical offset to the cam_0 body frame.
+    roll: 0.0 # TODO: measured cam_0 roll.
+    pitch: 0.0 # TODO: measured cam_0 pitch.
+    yaw: 0.0 # TODO: measured cam_0 yaw.
+
+  # Transform from the sensor kit root to bag-derived camera 1.
+  cam_1_link:
+    x: 0.0 # TODO: measured longitudinal offset to the cam_1 body frame.
+    y: 0.0 # TODO: measured lateral offset to the cam_1 body frame.
+    z: 0.0 # TODO: measured vertical offset to the cam_1 body frame.
+    roll: 0.0 # TODO: measured cam_1 roll.
+    pitch: 0.0 # TODO: measured cam_1 pitch.
+    yaw: 0.0 # TODO: measured cam_1 yaw.
+
+  # Transform from the sensor kit root to the Xsens MTi-680G IMU body frame.
+  # Verify the IMU axis convention before filling these values.
+  imu_mti680g_link:
+    x: 0.0 # TODO: measured longitudinal offset to the IMU body frame.
+    y: 0.0 # TODO: measured lateral offset to the IMU body frame.
+    z: 0.0 # TODO: measured vertical offset to the IMU body frame.
+    roll: 0.0 # TODO: measured IMU roll after axis convention verification.
+    pitch: 0.0 # TODO: measured IMU pitch after axis convention verification.
+    yaw: 0.0 # TODO: measured IMU yaw after axis convention verification.
+
+  # Transform from the sensor kit root to the NovAtel/OEM7-associated EG320
+  # IMU body frame. Verify the IMU axis convention before filling these values.
+  imu_eg320_link:
+    x: 0.0 # TODO: measured longitudinal offset to the IMU body frame.
+    y: 0.0 # TODO: measured lateral offset to the IMU body frame.
+    z: 0.0 # TODO: measured vertical offset to the IMU body frame.
+    roll: 0.0 # TODO: measured IMU roll after axis convention verification.
+    pitch: 0.0 # TODO: measured IMU pitch after axis convention verification.
+    yaw: 0.0 # TODO: measured IMU yaw after axis convention verification.
+
+  # Transform from the sensor kit root to the MCU ICM-20948 IMU body frame.
+  # Verify the IMU axis convention before filling these values.
+  imu_icm20948_link:
+    x: 0.0 # TODO: measured longitudinal offset to the IMU body frame.
+    y: 0.0 # TODO: measured lateral offset to the IMU body frame.
+    z: 0.0 # TODO: measured vertical offset to the IMU body frame.
+    roll: 0.0 # TODO: measured IMU roll after axis convention verification.
+    pitch: 0.0 # TODO: measured IMU pitch after axis convention verification.
+    yaw: 0.0 # TODO: measured IMU yaw after axis convention verification.
+
+  # Transform from the sensor kit root to the NovAtel OEM7 GNSS phase center.
+  # Measure the electrical phase center, not only the antenna housing.
+  gnss_oem7_link:
+    x: 0.0 # Estimated: horizontal lever arm not measured yet.
+    y: 0.0 # Estimated: horizontal lever arm not measured yet.
+    z: 2.05 # Estimated: map z=0 is near NovAtel antenna height.
+    roll: 0.0 # Estimated/defined antenna frame roll.
+    pitch: 0.0 # Estimated/defined antenna frame pitch.
+    yaw: 0.0 # Estimated/defined antenna frame yaw.
+
+  # Transform from the sensor kit root to the ZED-F9P GNSS phase center.
+  # Measure the electrical phase center, not only the antenna housing.
+  gnss_f9p_link:
+    x: 0.0 # TODO: measured longitudinal offset to the GNSS phase center.
+    y: 0.0 # TODO: measured lateral offset to the GNSS phase center.
+    z: 2.05 # Estimated: assume same antenna height until measured.
+    roll: 0.0 # TODO: measured/defined antenna frame roll.
+    pitch: 0.0 # TODO: measured/defined antenna frame pitch.
+    yaw: 0.0 # TODO: measured/defined antenna frame yaw or baseline-derived heading convention.

@@ -1,10 +1,15 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="output_pose_with_covariance_topic" default="/localization/pose_estimator/pose_with_covariance"/>
+  <arg
+    name="input_initial_pose_topic"
+    default="/localization/pose_twist_fusion_filter/biased_pose_with_covariance"
+    description="EKF biased pose topic used as NDT initial guess"
+  />
   <group>
     <include file="$(find-pkg-share autoware_ndt_scan_matcher)/launch/ndt_scan_matcher.launch.xml">
       <arg name="input_pointcloud" value="/localization/util/downsample/pointcloud"/>
-      <arg name="input_initial_pose_topic" value="/localization/pose_twist_fusion_filter/biased_pose_with_covariance"/>
+      <arg name="input_initial_pose_topic" value="$(var input_initial_pose_topic)"/>
       <arg name="input_regularization_pose_topic" value="/sensing/gnss/pose_with_covariance"/>
       <arg name="input_service_trigger_node" value="/localization/pose_estimator/trigger_node"/>
 

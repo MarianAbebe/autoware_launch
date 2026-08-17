@@ -1,0 +1,3 @@
+# TODO: Add sensors.xacro and sensor_kit.xacro in later phases.
+# Do not add fabricated transforms; use measured base_link and sensor-kit
+# frame relationships when URDF generation begins.

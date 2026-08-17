@@ -1,0 +1,22 @@
+<launch>
+  <arg name="launch_driver" default="false" description="do launch driver"/>
+
+  <group>
+    <push-ros-namespace namespace="imu"/>
+
+    <arg name="imu_raw_name" default="/xsens/imu/data"/>
+
+    <include file="$(find-pkg-share autoware_imu_corrector)/launch/imu_corrector.launch.xml">
+      <arg name="input_topic" value="$(var imu_raw_name)"/>
+      <arg name="output_topic" value="imu_data"/>
+      <!-- Use the official default corrector params until measured Xsens bias/noise values exist. -->
+    </include>
+
+    <include file="$(find-pkg-share autoware_imu_corrector)/launch/gyro_bias_estimator.launch.xml">
+      <arg name="input_imu_raw" value="$(var imu_raw_name)"/>
+      <arg name="input_odom" value="/localization/kinematic_state"/>
+      <arg name="input_pose_ndt" value="/localization/pose_estimator/pose_with_covariance"/>
+      <!-- Use the official default estimator params until measured Xsens bias/noise values exist. -->
+    </include>
+  </group>
+</launch>
