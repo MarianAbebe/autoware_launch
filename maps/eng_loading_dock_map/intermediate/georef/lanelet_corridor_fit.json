@@ -1,0 +1,120 @@
+{
+  "projector": "LocalCartesian exact, origin lat/lon from georef report, h0=0",
+  "cell_m": 0.5,
+  "scan_half_m": 20.0,
+  "scan_step_m": 0.5,
+  "n_lanelets": 2225,
+  "n_corridor_samples_all": 727029,
+  "clouds": {
+    "pre_rebuild_georef": {
+      "pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map_georeferenced.pcd",
+      "n_points": 1004344,
+      "n_corridor_samples_core": 6625,
+      "cells": {
+        "occupied": 34498,
+        "drivable": 796,
+        "tall": 11826
+      },
+      "gnss_control_at_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "n_in_bounds": 4917,
+        "frac_covered": 1.0,
+        "frac_drivable": 0.0,
+        "frac_tall": 0.179174293268253,
+        "drivable_given_covered": 0.0,
+        "tall_given_covered": 0.179174293268253,
+        "score": -0.179174293268253
+      },
+      "at_zero_offset": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "n_in_bounds": 6625,
+        "frac_covered": 0.11683018867924529,
+        "frac_drivable": 0.022339622641509432,
+        "frac_tall": 0.012075471698113207,
+        "drivable_given_covered": 0.19121447028423771,
+        "tall_given_covered": 0.10335917312661498,
+        "score": 0.010264150943396227
+      },
+      "best_offset": {
+        "dx_m": -3.0,
+        "dy_m": -2.5,
+        "n_in_bounds": 6625,
+        "frac_covered": 0.13147169811320755,
+        "frac_drivable": 0.04664150943396227,
+        "frac_tall": 0.0039245283018867925,
+        "drivable_given_covered": 0.3547646383467279,
+        "tall_given_covered": 0.029850746268656716,
+        "score": 0.04271698113207547
+      },
+      "offset_scan": {
+        "best_dx_m": -3.0,
+        "best_dy_m": -2.5,
+        "best_offset_magnitude_m": 3.905124837953327,
+        "score_at_zero": 0.010264150943396227,
+        "score_at_best": 0.04271698113207547,
+        "score_min": -0.21147169811320754,
+        "score_p50": -0.04241509433962264,
+        "score_improvement_best_minus_zero": 0.03245283018867924,
+        "peak_sharpness_frac_of_grid_within_1pct_of_peak": 0.0004572473708276177
+      },
+      "figure": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/results/corridor_fit_pre_rebuild_georef.png"
+    },
+    "rebuilt_current": {
+      "pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map.pcd",
+      "n_points": 3804549,
+      "n_corridor_samples_core": 6000,
+      "cells": {
+        "occupied": 88464,
+        "drivable": 1250,
+        "tall": 38606
+      },
+      "gnss_control_at_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "n_in_bounds": 4917,
+        "frac_covered": 1.0,
+        "frac_drivable": 0.0,
+        "frac_tall": 0.07972340858246899,
+        "drivable_given_covered": 0.0,
+        "tall_given_covered": 0.07972340858246899,
+        "score": -0.07972340858246899
+      },
+      "at_zero_offset": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "n_in_bounds": 6000,
+        "frac_covered": 0.7595,
+        "frac_drivable": 0.009833333333333333,
+        "frac_tall": 0.3531666666666667,
+        "drivable_given_covered": 0.01294711432960281,
+        "tall_given_covered": 0.46499890278692124,
+        "score": -0.3433333333333333
+      },
+      "best_offset": {
+        "dx_m": 20.0,
+        "dy_m": 19.5,
+        "n_in_bounds": 6000,
+        "frac_covered": 0.30433333333333334,
+        "frac_drivable": 0.013666666666666667,
+        "frac_tall": 0.10166666666666667,
+        "drivable_given_covered": 0.044906900328587074,
+        "tall_given_covered": 0.33406352683461116,
+        "score": -0.088
+      },
+      "offset_scan": {
+        "best_dx_m": 20.0,
+        "best_dy_m": 19.5,
+        "best_offset_magnitude_m": 27.932955446926844,
+        "score_at_zero": -0.3433333333333333,
+        "score_at_best": -0.088,
+        "score_min": -0.4166666666666667,
+        "score_p50": -0.3425,
+        "score_improvement_best_minus_zero": 0.2553333333333333,
+        "peak_sharpness_frac_of_grid_within_1pct_of_peak": 0.00015241579027587258
+      },
+      "figure": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/results/corridor_fit_rebuilt_current.png"
+    }
+  }
+}

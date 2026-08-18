@@ -1,0 +1,76 @@
+# =============================================================================
+# EXPERIMENTAL MAP PACKAGE — NOT PRODUCTION-CORRECT
+#
+# The PROJECTOR CONFIG BELOW IS VALIDATED (2026-08-13). The active
+# pointcloud_map.pcd has been restored to the pre-scaled backup because the
+# scaled rebuild smeared the cloud into arcs.
+#
+# Validation: docs/georef_projector_and_lanelet_placement.md
+# Backup of previous version: map_projector_info.yaml.bak_2026-08-13_validation
+# =============================================================================
+#
+# WHAT CHANGED 2026-08-13 (values are IDENTICAL, header re-written):
+#   * No numeric change. projector_type, vertical_datum, latitude, longitude
+#     and altitude are byte-identical to the 2026-08-12 experimental version.
+#   * Assumptions that were "unproven" have now been checked against the
+#     Autoware source in this workspace and against the map artifacts:
+#       - LocalCartesian IS accepted by autoware_map_projection_loader and by
+#         autoware_geography_utils::get_lanelet2_projector (lanelet2
+#         LocalCartesianProjector, i.e. GeographicLib LocalCartesian).
+#       - autoware_gnss_poser goes through the SAME projector
+#         (geography_utils::project_forward), so the old note "gnss_poser may
+#         not support LocalCartesian" is obsolete for this Autoware version.
+#       - lanelet2_map.osm projected through this origin overlays the
+#         georeferenced point cloud with no measurable displacement
+#         (<= ~2 m, see report). It is NOT displaced.
+#
+# WHY LocalCartesian AND NOT MGRS / LocalCartesianUTM / TransverseMercator:
+#   * lanelet2_map.osm spans MGRS 100 km squares 11UPS and 11UQS
+#     (77.4 % of nodes in 11UQS, 22.6 % in 11UPS) -> MGRS is illegal for the
+#     full map. The dock footprint alone is entirely inside 11UQS.
+#   * More importantly, every UTM-derived projector (MGRS, LocalCartesianUTM,
+#     TransverseMercator) rotates by the meridian convergence, which is
+#     2.2313 deg here (zone 11, CM -117 deg, lat 51.081 deg). Against a point
+#     cloud built in true local ENU that is a 3.9 m error at 100 m radius and
+#     5.5 m at the footprint corner, plus a 0.9996 grid scale (0.08 m / 200 m).
+#     LocalCartesian is the ONLY projector that matches the frame the PCD was
+#     actually built in. Do not "upgrade" to MGRS without rebuilding the PCD.
+#
+# ALTITUDE CONVENTION (read before touching Z anywhere):
+#   * autoware_map_projection_loader hard-codes map_origin.altitude = 0.0
+#     (map_projection_loader.cpp), so the value in this file is informational.
+#   * The PCD/trajectory were georeferenced in an ENU frame whose origin
+#     altitude is 1094.7826704429463 m (first NovAtel /novatel/oem7/fix).
+#     Map z = 0 is therefore the GNSS ANTENNA height at the start of the bag,
+#     and the ground surface sits near z = -2.05 m.
+#   * Autoware LocalCartesian instead puts z = 0 at the projector origin's
+#     h = 0, so gnss_poser emits z ~ +1094.78. The eng kit's
+#     gnss_pose_altitude_corrector.py subtracts 1094.784 m to bridge the two.
+#     That node is REQUIRED as long as the PCD keeps this convention.
+#   * Consequence: lanelet2 nodes (which carry ele=0) land at z ~ 0, i.e.
+#     ~2.05 m ABOVE the point-cloud ground. Harmless for NDT and for
+#     map_height_fitter target=pointcloud_map; cosmetic in RViz.
+#
+# GEOREF ENU APPROXIMATION (known, small):
+#   The georef script used a spherical ENU (R = 6378137 m for both axes)
+#   rather than the WGS84 ellipsoid. Versus exact LocalCartesian that is
+#   +0.203 % on east, -0.063 % on north, i.e. 0.14 m median / 0.30 m max
+#   over the map footprint. Below the 0.735 m GNSS<->KISS alignment RMSE.
+#
+# RESTORED MAP NOTE (2026-08-13 15:47):
+#   The rebuild applied a 0.6901 scale derived from the KISS/GNSS path-length
+#   ratio. That ratio is pose-to-pose jitter, not a real scale error (optimal
+#   similarity scale is 0.991). Applying it degraded trajectory georeferencing
+#   from 0.735 m RMSE to 11.83 m RMSE and smeared the cloud into unusable arcs.
+#   The active pointcloud_map.pcd is now restored from
+#   pointcloud_map.pcd.pre_rebuild_backup (1,004,344 points). The smeared map is
+#   backed up as pointcloud_map.pcd.corrupt_scaled_backup_2026-08-13_1547.
+#   This YAML is correct for the restored backup cloud.
+# =============================================================================
+
+projector_type: LocalCartesian
+vertical_datum: WGS84
+map_origin:
+  latitude: 51.08080935188234   # [deg] ENU origin = first NovAtel /novatel/oem7/fix
+  longitude: -114.1331143659806 # [deg] ENU origin = first NovAtel /novatel/oem7/fix
+  altitude: 0.0                 # [m]  loader forces 0.0; true ENU origin alt is 1094.7826704429463

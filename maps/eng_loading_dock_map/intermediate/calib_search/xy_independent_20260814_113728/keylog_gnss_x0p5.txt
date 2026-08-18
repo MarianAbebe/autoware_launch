@@ -1,0 +1,7 @@
+[component_container_mt-1] [ERROR] [1786731679.642280692] [localization.util.crop_box_filter_measurement_range]: Failure to get transform from base_link to lidar_vlp16_points_link with error: Lookup would require extrapolation into the past.  Requested time 1752868636.749022 but the earliest data is at time 1752868637.363132, when looking up transform from frame [lidar_vlp16_points_link] to frame [base_link]
+[gnss_pose_altitude_corrector.py-12] [INFO] [1786731688.698641111] [sensing.gnss.eng_dock_gnss_pose_altitude_corrector]: GNSS motion heading ready: raw=-37.1 deg corrected=-37.1 deg (travel 1.5 m, offset 0.0 deg)
+[initialize_after_ready.py-25] [INFO] [1786731711.284249782] [eng_dock_initialize_after_ready]: Seeding localization via /initialpose3d xyz=(9.19,-3.92,-2.06) yaw_deg=-22.1 gnss=1573 lidar=61 recent_lidar=6
+[initialize_after_ready.py-25] [INFO] [1786731711.690265199] [eng_dock_initialize_after_ready]: NDT trigger(True) ok=True msg=
+[autoware_ndt_scan_matcher_node-15] [WARN] [1786731711.893666422] [localization.pose_estimator.ndt_scan_matcher]: Lidar has gone out of the map range
+[initialize_after_ready.py-25] [INFO] [1786731712.692183670] [eng_dock_initialize_after_ready]: Localization seed complete; EKF publishing and NDT scan matcher activated
+[autoware_ndt_scan_matcher_node-15] [WARN] [1786731723.451940843] [localization.pose_estimator.ndt_scan_matcher]: Lidar has gone out of the map range

@@ -1,0 +1,151 @@
+{
+  "projector": "LocalCartesian (exact, GeographicLib convention)",
+  "origin": {
+    "lat": 51.08080935188234,
+    "lon": -114.1331143659806,
+    "alt_m": 0.0
+  },
+  "cell_m": 0.5,
+  "n_lanelets": 2225,
+  "n_centerline_samples_total": 153974,
+  "clouds": {
+    "rebuilt_current": {
+      "pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map.pcd",
+      "n_points": 3804549,
+      "bbox_min": [
+        -76.5017318725586,
+        -90.46644592285156,
+        -5.625672817230225
+      ],
+      "bbox_max": [
+        112.2161636352539,
+        107.09968566894531,
+        23.05381965637207
+      ],
+      "raster_shape": [
+        400,
+        382
+      ],
+      "n_cells_occupied": 88464,
+      "n_cells_ground": 11229,
+      "n_cells_obstacle": 76341,
+      "n_centerline_samples_near": 2572,
+      "control_gnss_track_at_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "n_sampled": 4917,
+        "n_inside_raster": 4917,
+        "frac_ground": 0.0,
+        "frac_obstacle": 1.0,
+        "frac_any_return": 1.0,
+        "score": -1.0
+      },
+      "lanelet_centerline_at_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "n_sampled": 2572,
+        "n_inside_raster": 1866,
+        "frac_ground": 0.07127545551982852,
+        "frac_obstacle": 0.4790996784565916,
+        "frac_any_return": 0.5519828510182208,
+        "score": -0.4078242229367631
+      },
+      "lanelet_centerline_best_offset": {
+        "dx_m": -40.0,
+        "dy_m": 30.0,
+        "n_sampled": 2572,
+        "n_inside_raster": 1131,
+        "frac_ground": 0.0636604774535809,
+        "frac_obstacle": 0.05305039787798409,
+        "frac_any_return": 0.11759504862953139,
+        "score": 0.010610079575596816
+      },
+      "offset_scan_score_stats": {
+        "n_offsets": 6524,
+        "score_at_zero": -0.4078242229367631,
+        "score_max": 0.010610079575596815,
+        "score_p50": -0.41585705951925467
+      },
+      "control_gnss_track_best_offset": {
+        "dx_m": 20.0,
+        "dy_m": 20.0,
+        "n_sampled": 4917,
+        "n_inside_raster": 4917,
+        "frac_ground": 0.03559080740288794,
+        "frac_obstacle": 0.9562741509050234,
+        "frac_any_return": 0.99633923123856,
+        "score": -0.9206833435021354
+      },
+      "figure": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/results/overlay_rebuilt_current.png"
+    },
+    "pre_rebuild_georef": {
+      "pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map_georeferenced.pcd",
+      "n_points": 1004344,
+      "bbox_min": [
+        -79.56353759765625,
+        -76.59004974365234,
+        -5.397557735443115
+      ],
+      "bbox_max": [
+        122.83969116210938,
+        119.2767105102539,
+        21.73111915588379
+      ],
+      "raster_shape": [
+        396,
+        409
+      ],
+      "n_cells_occupied": 34498,
+      "n_cells_ground": 5888,
+      "n_cells_obstacle": 22804,
+      "n_centerline_samples_near": 2881,
+      "control_gnss_track_at_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "n_sampled": 4917,
+        "n_inside_raster": 4917,
+        "frac_ground": 0.002033760423022168,
+        "frac_obstacle": 0.938987187309335,
+        "frac_any_return": 1.0,
+        "score": -0.9369534268863128
+      },
+      "lanelet_centerline_at_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "n_sampled": 2881,
+        "n_inside_raster": 1978,
+        "frac_ground": 0.042467138523761376,
+        "frac_obstacle": 0.021233569261880688,
+        "frac_any_return": 0.07937310414560161,
+        "score": 0.021233569261880688
+      },
+      "lanelet_centerline_best_offset": {
+        "dx_m": -24.0,
+        "dy_m": -3.0,
+        "n_sampled": 2881,
+        "n_inside_raster": 1984,
+        "frac_ground": 0.1123991935483871,
+        "frac_obstacle": 0.04032258064516129,
+        "frac_any_return": 0.16532258064516128,
+        "score": 0.07207661290322581
+      },
+      "offset_scan_score_stats": {
+        "n_offsets": 6561,
+        "score_at_zero": 0.021233569261880688,
+        "score_max": 0.07207661290322581,
+        "score_p50": -0.06035805626598466
+      },
+      "control_gnss_track_best_offset": {
+        "dx_m": -20.0,
+        "dy_m": 2.0,
+        "n_sampled": 4917,
+        "n_inside_raster": 4917,
+        "frac_ground": 0.13646532438478748,
+        "frac_obstacle": 0.3898718730933496,
+        "frac_any_return": 0.9097010372178157,
+        "score": -0.2534065487085621
+      },
+      "figure": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/results/overlay_pre_rebuild_georef.png"
+    }
+  }
+}

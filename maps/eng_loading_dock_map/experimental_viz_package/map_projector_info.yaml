@@ -1,0 +1,32 @@
+# =============================================================================
+# EXPERIMENTAL ONLY — NOT PRODUCTION-CORRECT
+# Generated: 2026-08-12 for overnight Autoware visualization load test
+# Do NOT treat this as a validated Engineering Loading Dock map package.
+# =============================================================================
+#
+# Purpose: allow Autoware map loaders to project Carter's WGS84 Lanelet2 OSM
+# into the same ad-hoc local ENU-like frame used when georeferencing the KISS
+# PCD (see intermediate/georef/georef_alignment_report.json).
+#
+# Assumptions (every one is unproven for production):
+# 1) projector_type LocalCartesian matches Autoware's GeographicLib local
+#    Cartesian (ENU) from map_origin — approximately the frame of
+#    pointcloud_map_georeferenced.pcd (our georef used a spherical ENU approx).
+# 2) map_origin is the FIRST NovAtel /novatel/oem7/fix fix used as ENU origin
+#    during GNSS↔KISS alignment (not Carter's Vector Map Builder origin).
+# 3) vertical_datum WGS84; Autoware's loader forces map_origin.altitude to 0.0
+#    at runtime even if listed here.
+# 4) For visualization, launch map_path should use the EXPERIMENTAL package
+#    layout (experimental_viz_package/) that points pointcloud_map.pcd at the
+#    georeferenced cloud — NOT the original KISS-local pointcloud_map.pcd.
+# 5) OSM spans two MGRS grids; LocalCartesian avoids illegal multi-grid MGRS.
+# 6) PCD still has KISS ghost walls; loading success ≠ NDT-ready map.
+#
+# =============================================================================
+
+projector_type: LocalCartesian
+vertical_datum: WGS84
+map_origin:
+  latitude: 51.08080935188234   # [deg] EXPERIMENTAL ENU origin (first NovAtel fix)
+  longitude: -114.1331143659806 # [deg] EXPERIMENTAL ENU origin (first NovAtel fix)
+  altitude: 0.0                 # [m]  Autoware loader overwrites altitude to 0.0

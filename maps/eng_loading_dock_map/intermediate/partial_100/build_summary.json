@@ -1,0 +1,27 @@
+{
+  "bag": "/home/agxorin/Desktop/engg_loading_dock_01_gnss",
+  "topic": "/velodyne_points",
+  "n_scans_odometry": 100,
+  "n_scans_in_map": 50,
+  "scan_stride": 2,
+  "map_voxel_m": 0.2,
+  "max_range_m": 80.0,
+  "n_map_points": 20904,
+  "points_before_final_voxel_estimate": 322787,
+  "trajectory_length_m": 1.5427120021835699,
+  "bbox_min_xyz": [
+    -71.6935807918954,
+    -52.151475864992015,
+    -1.8028822318711626
+  ],
+  "bbox_max_xyz": [
+    75.05159590157974,
+    77.19054274075387,
+    20.356126764247357
+  ],
+  "bbox_diagonal_m": 196.86169342840273,
+  "runtime_s": 1.7005451539880596,
+  "poses_dir": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/intermediate/partial_100/2026-08-12_21-43-50",
+  "pcd_kiss_frame": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/intermediate/partial_100/pointcloud_map_kiss_frame.pcd",
+  "frame_note": "Map is in KISS-ICP odometry frame (first pose ~ identity). NOT yet georeferenced to GNSS / Lanelet2 / Autoware map frame."
+}

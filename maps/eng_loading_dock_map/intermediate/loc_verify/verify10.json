@@ -1,0 +1,36 @@
+{
+  "counts": {
+    "gnss": 3611,
+    "ekf": 3438,
+    "down": 3069,
+    "map_base_tf": 162
+  },
+  "rates_hz": {
+    "down": 25.575,
+    "ndt_pwc": 0.0,
+    "ndt_pose": 0.0,
+    "aligned": 0.0,
+    "nvtl": 0.0,
+    "map_base_tf": 1.35,
+    "ekf": 28.65,
+    "gnss": 30.091666666666665
+  },
+  "ndt_score_nvtl": {
+    "n": 0,
+    "median": null,
+    "p95": null,
+    "max": null
+  },
+  "ekf_gnss_pos_delta_m": {
+    "n": 493,
+    "median": 34.664746133253814,
+    "p95": 39.31969332253209,
+    "max": 40.30053097669018
+  },
+  "ekf_gnss_yaw_delta_deg": {
+    "n": 493,
+    "median": 94.09736495087976,
+    "p95": 110.45253779859303,
+    "max": 131.42666987834951
+  }
+}

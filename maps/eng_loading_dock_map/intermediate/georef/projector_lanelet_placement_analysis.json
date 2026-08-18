@@ -1,0 +1,242 @@
+{
+  "origin": {
+    "lat": 51.08080935188234,
+    "lon": -114.1331143659806,
+    "alt_m": 1094.7826704429463
+  },
+  "sources": {
+    "georef_report": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/intermediate/georef/georef_alignment_report.json",
+    "rebuild_validation": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/intermediate/georef/rebuild_validation.json",
+    "osm": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/lanelet2_map.osm",
+    "pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map.pcd"
+  },
+  "A_projector_frame_consistency": {
+    "description": "Difference between exact LocalCartesian (what Autoware/lanelet2 use) and the spherical ENU used by georeference_kiss_to_gnss.py, evaluated on a grid covering the PCD footprint.",
+    "grid_extent_m": {
+      "east": [
+        -120,
+        140
+      ],
+      "north": [
+        -120,
+        130
+      ]
+    },
+    "dxy_norm_m": {
+      "n": 702,
+      "mean_m": 0.1488653856005657,
+      "median_m": 0.1445912754217523,
+      "rmse_m": 0.1663063345986994,
+      "p95_m": 0.2686784617723832,
+      "max_m": 0.2979164476821578
+    },
+    "east_scale_ratio_exact_over_spherical": 1.0020313797301517,
+    "north_scale_ratio_exact_over_spherical": 0.9993741787025117,
+    "up_at_footprint_edge_m": -0.0028635919175772086
+  },
+  "B_kiss_gnss_alignment": {
+    "n_matched": 4917,
+    "residuals_report_transform_unscaled": {
+      "n": 4917,
+      "mean_m": 0.7047836641967947,
+      "median_m": 0.7190063979655361,
+      "rmse_m": 0.7353288002361517,
+      "p95_m": 1.018091247292294,
+      "max_m": 1.3761848756399508
+    },
+    "residuals_rebuild_transform_scaled": {
+      "n": 4917,
+      "mean_m": 10.638577937105923,
+      "median_m": 10.593361638826655,
+      "rmse_m": 11.831478124672042,
+      "p95_m": 19.41965131706445,
+      "max_m": 19.957129864627312
+    },
+    "residuals_optimal_similarity": {
+      "n": 4917,
+      "mean_m": 0.6820965943928476,
+      "median_m": 0.7038463329076708,
+      "rmse_m": 0.7061650637522866,
+      "p95_m": 0.937803284189479,
+      "max_m": 1.142059127267403
+    },
+    "residuals_optimal_rigid": {
+      "n": 4917,
+      "mean_m": 0.7047836641967947,
+      "median_m": 0.7190063979655361,
+      "rmse_m": 0.7353288002361519,
+      "p95_m": 1.0180912472923,
+      "max_m": 1.3761848756399364
+    },
+    "optimal_similarity_scale": 0.9909843338100552,
+    "pairwise_distance_scale_kiss_over_gnss": 1.008463056832168,
+    "scale_applied_by_rebuild": 0.690105258622833,
+    "arc_length_by_decimation": {
+      "1": {
+        "kiss_m": 295.1213487553797,
+        "gnss_m": 203.66479470795062,
+        "ratio": 1.4490543109258285
+      },
+      "2": {
+        "kiss_m": 273.59352225956445,
+        "gnss_m": 202.04287488122372,
+        "ratio": 1.3541359596095812
+      },
+      "5": {
+        "kiss_m": 226.70083310595967,
+        "gnss_m": 200.76684148200462,
+        "ratio": 1.1291746756213206
+      },
+      "10": {
+        "kiss_m": 220.3460877679263,
+        "gnss_m": 199.7191553369886,
+        "ratio": 1.1032796899032224
+      },
+      "20": {
+        "kiss_m": 214.08363545100713,
+        "gnss_m": 197.78684255603247,
+        "ratio": 1.0823957381814102
+      },
+      "50": {
+        "kiss_m": 201.30578186768236,
+        "gnss_m": 190.9558156755299,
+        "ratio": 1.0542008430355376
+      }
+    },
+    "radius_of_gyration_max_m": {
+      "kiss": 33.89585193044351,
+      "gnss": 33.62919838154982
+    }
+  },
+  "C_osm_bounds": {
+    "n_nodes": 126091,
+    "n_nodes_referenced_by_ways": 55668,
+    "n_lanelet_boundary_nodes": 50361,
+    "geographic_bounds": {
+      "lat_min": 51.06642584622,
+      "lat_max": 51.08307017003,
+      "lon_min": -114.152636,
+      "lon_max": -114.11604534278
+    },
+    "extent_m": {
+      "east": 2564.7232592122214,
+      "north": 1851.7398844134718
+    },
+    "enu_bounds_localcartesian_full": {
+      "min": [
+        -1368.3521990841698,
+        -1600.0521876192988,
+        -0.2916479660146278
+      ],
+      "max": [
+        1196.3710601280516,
+        251.687696794173,
+        -1.2982016210679333e-06
+      ]
+    },
+    "enu_bounds_localcartesian_near_pcd": {
+      "min": [
+        -96.48412701004507,
+        -109.4314880086642,
+        -0.0017015766940934867
+      ],
+      "max": [
+        131.12075963668988,
+        105.07379668210842,
+        -1.2982016210679333e-06
+      ],
+      "n_nodes": 1062
+    },
+    "mgrs_100km_squares_at_corners": [
+      "11UPS",
+      "11UQS"
+    ],
+    "spherical_vs_localcartesian_shift_near_pcd_m": {
+      "n": 1062,
+      "mean_m": 0.11912937746379418,
+      "median_m": 0.1071281426679225,
+      "rmse_m": 0.13112682114200122,
+      "p95_m": 0.22454820892400204,
+      "max_m": 0.26732634222054963
+    },
+    "pcd_bbox_from_rebuild": {
+      "min": [
+        -76.50173106927647,
+        -90.46644378609878,
+        -5.625672603473302
+      ],
+      "max": [
+        112.21616731096856,
+        107.0996887406963,
+        23.053820337427993
+      ]
+    },
+    "bbox_overlap_m": {
+      "east": 188.71789838024503,
+      "north": 197.56613252679506
+    }
+  },
+  "D_overlay": {
+    "pcd_bbox_measured": {
+      "min": [
+        -76.5017318725586,
+        -90.46644592285156,
+        -5.625672817230225
+      ],
+      "max": [
+        112.2161636352539,
+        107.09968566894531,
+        23.05381965637207
+      ]
+    },
+    "pcd_n_points": 3804549,
+    "n_lanelet_nodes_near_pcd": 804,
+    "gnss_track_to_lanelet_nn": {
+      "n": 4917,
+      "mean_m": 21.811579217018902,
+      "median_m": 23.448125858011203,
+      "rmse_m": 25.604968099214528,
+      "p95_m": 42.69509908880224,
+      "max_m": 44.663942139132395
+    },
+    "gnss_track_best_offset": {
+      "dx_m": -42.59999999999999,
+      "dy_m": 14.800000000000004,
+      "median_nn_m": 4.530556767740541
+    },
+    "pcd_ground_to_lanelet_nn": {
+      "n": 62504,
+      "mean_m": 20.948052046119834,
+      "median_m": 18.11458949970498,
+      "rmse_m": 25.878424747940823,
+      "p95_m": 50.31835700116395,
+      "max_m": 91.05090970235956
+    },
+    "pcd_ground_z_window": [
+      -1.843034634590149,
+      0.39780667424201965
+    ],
+    "lanelet_to_pcd_nn": {
+      "n": 804,
+      "mean_m": 9.636061763650181,
+      "median_m": 0.42692596980616165,
+      "rmse_m": 16.57652197832255,
+      "p95_m": 37.834083004490886,
+      "max_m": 52.211582973375016
+    },
+    "n_way_nodes_near_pcd": 1062,
+    "gnss_track_to_any_way_node_nn": {
+      "n": 4917,
+      "mean_m": 9.237027572796693,
+      "median_m": 7.094801296755611,
+      "rmse_m": 11.203420959696393,
+      "p95_m": 21.146034659805483,
+      "max_m": 23.24708115006329
+    },
+    "gnss_track_best_offset_any_way": {
+      "dx_m": -30.29999999999999,
+      "dy_m": 7.200000000000008,
+      "median_nn_m": 2.30142207304642
+    }
+  }
+}

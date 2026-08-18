@@ -1,0 +1,79 @@
+[
+  {
+    "yaw_deg": 0,
+    "ndt_pose_hz": 0.6583333333333333,
+    "nvtl_median": 2.3660173416137695,
+    "nvtl_p95": 3.1059410572052,
+    "pos_median_m": 3.2855040975374417,
+    "pos_p95_m": 4.896606341269791,
+    "yaw_median_deg": 64.76315478800666,
+    "lidar_out_of_map_count": 2,
+    "mismatch_count": 0
+  },
+  {
+    "yaw_deg": 10,
+    "ndt_pose_hz": 0.7583333333333333,
+    "nvtl_median": 2.313246250152588,
+    "nvtl_p95": 2.4999711513519287,
+    "pos_median_m": 3.3230475163881317,
+    "pos_p95_m": 4.979477107156785,
+    "yaw_median_deg": 65.37847586504546,
+    "lidar_out_of_map_count": 2,
+    "mismatch_count": 0
+  },
+  {
+    "yaw_deg": 20,
+    "ndt_pose_hz": 0.6583333333333333,
+    "nvtl_median": 2.298508882522583,
+    "nvtl_p95": 2.4611752033233643,
+    "pos_median_m": 3.311265174035501,
+    "pos_p95_m": 4.916984218055408,
+    "yaw_median_deg": 64.45678366576482,
+    "lidar_out_of_map_count": 2,
+    "mismatch_count": 0
+  },
+  {
+    "yaw_deg": -30,
+    "ndt_pose_hz": 0.575,
+    "nvtl_median": 2.2721471786499023,
+    "nvtl_p95": 2.436342716217041,
+    "pos_median_m": 6.527461412285144,
+    "pos_p95_m": 8.513963007549698,
+    "yaw_median_deg": 91.06109088437137,
+    "lidar_out_of_map_count": 2,
+    "mismatch_count": 0
+  },
+  {
+    "yaw_deg": -20,
+    "ndt_pose_hz": 0.5916666666666667,
+    "nvtl_median": 2.2689995765686035,
+    "nvtl_p95": 2.406217098236084,
+    "pos_median_m": 6.4795119129897705,
+    "pos_p95_m": 8.3559268885709,
+    "yaw_median_deg": 90.62489302338662,
+    "lidar_out_of_map_count": 2,
+    "mismatch_count": 0
+  },
+  {
+    "yaw_deg": -10,
+    "ndt_pose_hz": 0.7,
+    "nvtl_median": 2.264863967895508,
+    "nvtl_p95": 2.4151439666748047,
+    "pos_median_m": 6.451775875946448,
+    "pos_p95_m": 8.342280624463818,
+    "yaw_median_deg": 91.09422581077183,
+    "lidar_out_of_map_count": 2,
+    "mismatch_count": 0
+  },
+  {
+    "yaw_deg": 30,
+    "ndt_pose_hz": 0.575,
+    "nvtl_median": 2.23606276512146,
+    "nvtl_p95": 2.3980298042297363,
+    "pos_median_m": 6.278343988734907,
+    "pos_p95_m": 8.29756717729237,
+    "yaw_median_deg": 90.75222626828156,
+    "lidar_out_of_map_count": 2,
+    "mismatch_count": 0
+  }
+]

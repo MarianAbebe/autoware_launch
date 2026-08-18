@@ -1,0 +1,6 @@
+#!/home/agxorin/autoware_data/maps/eng_loading_dock_map/venv/bin/python
+import sys
+from kiss_icp.tools.cmd import run
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(run())

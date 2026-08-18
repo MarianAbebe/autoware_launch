@@ -1,0 +1,46 @@
+{
+  "same_frame_as_autoware_map": false,
+  "reason": "PCD/traj transformed into ad-hoc ENU from first GNSS fix. Carter OSM is WGS84 geographic; Autoware would project it via map_projector_info (MGRS invalid for full OSM; origin-based type unknown). Spatial overlap in this ENU is a consistency check only \u2014 not proof of shared Autoware map frame. map_projector_info.yaml NOT written.",
+  "pcd_bbox_enu": {
+    "min": [
+      -79.56353651024247,
+      -76.59005029067899,
+      -5.397557790809215
+    ],
+    "max": [
+      122.83969310887308,
+      119.27671165276445,
+      21.73111873227108
+    ]
+  },
+  "osm_near_bbox_enu": {
+    "min": [
+      -78.8034930516551,
+      -98.10051080269078,
+      -1094.7826704429463
+    ],
+    "max": [
+      138.72911149676676,
+      105.139058008421,
+      -1094.7826704429463
+    ],
+    "n_nodes": 1003
+  },
+  "xy_bbox_overlap_m": {
+    "x": 201.64318616052816,
+    "y": 181.7291082991
+  },
+  "aligned_traj_to_osm_node_dist": {
+    "median_m": 7.126879014095614,
+    "p95_m": 21.557030238112187,
+    "mean_m": 9.364291554578406
+  },
+  "pcd_sample_to_osm_node_dist": {
+    "median_m": 10.987799023492329,
+    "p95_m": 33.9057604771404
+  },
+  "original_pcd_preserved": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map.pcd",
+  "georeferenced_pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map_georeferenced.pcd",
+  "ndt_ready": false,
+  "ndt_ready_reason": "Global GNSS alignment does not remove internal KISS drift / ghost walls. Prior visual review showed doubled structures; georef only places the distorted cloud roughly on Earth."
+}

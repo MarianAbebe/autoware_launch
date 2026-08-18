@@ -1,0 +1,1 @@
+{"phase": "lidar", "label": "xm0p5", "lidar_x": -0.5, "lidar_y": 0.0, "gnss_x": 0.0, "gnss_y": 0.0, "ndt_pose_hz": 0.65, "nvtl_median": 2.3947155475616455, "nvtl_p95": 3.119959831237793, "pos_median_m": 2.5022559921570857, "pos_p95_m": 4.234637005006816, "yaw_median_deg": 59.76820193545012, "lidar_out_of_map_count": 2, "mismatch_count": 0, "score_below_count": 0}

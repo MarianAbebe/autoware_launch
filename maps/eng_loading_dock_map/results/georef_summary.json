@@ -1,0 +1,224 @@
+{
+  "alignment": {
+    "enu_origin_lla": {
+      "latitude": 51.08080935188234,
+      "longitude": -114.1331143659806,
+      "altitude": 1094.7826704429463
+    },
+    "enu_frame_note": "Local ENU meters east-north-up from first NovAtel fix. NOT Autoware MGRS (OSM spans 11UPS/11UQS). NOT proven Autoware map frame.",
+    "n_kiss_poses": 4918,
+    "n_gnss": 24800,
+    "n_matched": 4917,
+    "time_span_matched_s": 495.8273000717163,
+    "kiss_path_length_m": 295.1213487553797,
+    "gnss_path_length_m": 203.66479470795062,
+    "path_length_ratio_kiss_over_gnss": 1.4490543109258285,
+    "rigid_se3_no_scale": {
+      "R": [
+        [
+          0.8408161720571906,
+          0.534497823648312,
+          0.08567520832954792
+        ],
+        [
+          -0.5367599926628139,
+          0.8437252454319417,
+          0.004052221295415059
+        ],
+        [
+          -0.07012043271193978,
+          -0.04939419739229268,
+          0.9963148790318559
+        ]
+      ],
+      "t": [
+        -0.1767111914320374,
+        -0.5440383337128782,
+        0.7278539531589054
+      ],
+      "s": 1.0,
+      "rmse_m": 0.7353288002361517,
+      "median_m": 0.7190063979655361,
+      "mean_m": 0.7047836641967947,
+      "p95_m": 1.018091247292294,
+      "max_m": 1.3761848756399508
+    },
+    "rigid_se3_with_scale": {
+      "R": [
+        [
+          0.8408161720571906,
+          0.534497823648312,
+          0.08567520832954792
+        ],
+        [
+          -0.5367599926628139,
+          0.8437252454319417,
+          0.004052221295415059
+        ],
+        [
+          -0.07012043271193978,
+          -0.04939419739229268,
+          0.9963148790318559
+        ]
+      ],
+      "t": [
+        -140923.20532976603,
+        -54913.6929650226,
+        5266.2209883517635
+      ],
+      "s": 4872.6699693440405,
+      "rmse_m": 110792.1069569895,
+      "median_m": 108210.82298733733,
+      "p95_m": 162655.42279813718,
+      "scale_improvement_rmse_m": -110791.37162818927
+    },
+    "planar_yaw_xy_no_scale": {
+      "R": [
+        [
+          0.8436697404472316,
+          0.5368625234207554,
+          0.0
+        ],
+        [
+          -0.5368625234207552,
+          0.8436697404472315,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "t": [
+        -0.16426013151521346,
+        -0.5349039193312954,
+        -1.8001362685641156
+      ],
+      "rmse_m": 1.4943447344522436,
+      "median_m": 1.2658367426955224,
+      "p95_m": 2.7271626582289166
+    },
+    "residuals_vs_time_se3": [
+      {
+        "t0_s": 0.0,
+        "t1_s": 99.16546021434326,
+        "n": 984,
+        "rmse_m": 0.7775394213974409,
+        "median_m": 0.8272155074487839,
+        "p95_m": 1.114228352458519
+      },
+      {
+        "t0_s": 99.16546021434326,
+        "t1_s": 198.3309204286865,
+        "n": 983,
+        "rmse_m": 0.6101689029371732,
+        "median_m": 0.5587036886559457,
+        "p95_m": 0.962868623832997
+      },
+      {
+        "t0_s": 198.3309204286865,
+        "t1_s": 297.49638064302974,
+        "n": 983,
+        "rmse_m": 0.7819371091488743,
+        "median_m": 0.7803594769517741,
+        "p95_m": 0.9683687486367466
+      },
+      {
+        "t0_s": 297.49638064302974,
+        "t1_s": 396.661840857373,
+        "n": 983,
+        "rmse_m": 0.7135737871669972,
+        "median_m": 0.6489428926408243,
+        "p95_m": 1.01939376152794
+      },
+      {
+        "t0_s": 396.661840857373,
+        "t1_s": 495.8273010717163,
+        "n": 984,
+        "rmse_m": 0.7784112544066034,
+        "median_m": 0.769468773434677,
+        "p95_m": 0.9227963531453605
+      }
+    ],
+    "interpretation": {
+      "early_window_rmse_m": 0.7775394213974409,
+      "late_window_rmse_m": 0.7784112544066034,
+      "rmse_growth_late_minus_early_m": 0.0008718330091624926,
+      "note": "Growth of residual over time indicates internal KISS drift (or lever-arm/extrinsic effects), not just a bad global SE(3). A low global RMSE can still leave doubled walls in the PCD."
+    },
+    "scale_required": false,
+    "chosen_transform": "rigid_se3_no_scale",
+    "R": [
+      [
+        0.8408161720571906,
+        0.534497823648312,
+        0.08567520832954792
+      ],
+      [
+        -0.5367599926628139,
+        0.8437252454319417,
+        0.004052221295415059
+      ],
+      [
+        -0.07012043271193978,
+        -0.04939419739229268,
+        0.9963148790318559
+      ]
+    ],
+    "t": [
+      -0.1767111914320374,
+      -0.5440383337128782,
+      0.7278539531589054
+    ],
+    "s": 1.0,
+    "apply_pcd": true,
+    "global_alignment_quality": "good"
+  },
+  "osm_comparison": {
+    "same_frame_as_autoware_map": false,
+    "reason": "PCD/traj transformed into ad-hoc ENU from first GNSS fix. Carter OSM is WGS84 geographic; Autoware would project it via map_projector_info (MGRS invalid for full OSM; origin-based type unknown). Spatial overlap in this ENU is a consistency check only \u2014 not proof of shared Autoware map frame. map_projector_info.yaml NOT written.",
+    "pcd_bbox_enu": {
+      "min": [
+        -79.56353651024247,
+        -76.59005029067899,
+        -5.397557790809215
+      ],
+      "max": [
+        122.83969310887308,
+        119.27671165276445,
+        21.73111873227108
+      ]
+    },
+    "osm_near_bbox_enu": {
+      "min": [
+        -78.8034930516551,
+        -98.10051080269078,
+        -1094.7826704429463
+      ],
+      "max": [
+        138.72911149676676,
+        105.139058008421,
+        -1094.7826704429463
+      ],
+      "n_nodes": 1003
+    },
+    "xy_bbox_overlap_m": {
+      "x": 201.64318616052816,
+      "y": 181.7291082991
+    },
+    "aligned_traj_to_osm_node_dist": {
+      "median_m": 7.126879014095614,
+      "p95_m": 21.557030238112187,
+      "mean_m": 9.364291554578406
+    },
+    "pcd_sample_to_osm_node_dist": {
+      "median_m": 10.987799023492329,
+      "p95_m": 33.9057604771404
+    },
+    "original_pcd_preserved": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map.pcd",
+    "georeferenced_pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map_georeferenced.pcd",
+    "ndt_ready": false,
+    "ndt_ready_reason": "Global GNSS alignment does not remove internal KISS drift / ghost walls. Prior visual review showed doubled structures; georef only places the distorted cloud roughly on Earth."
+  }
+}

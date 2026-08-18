@@ -1,0 +1,39 @@
+{
+  "experiment": "experimental LocalCartesian map_projector_info for viz load",
+  "production_correct": false,
+  "map_projector_info": {
+    "result": "SUCCESS",
+    "path": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/map_projector_info.yaml",
+    "also_copied_to": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/experimental_viz_package/map_projector_info.yaml",
+    "published_topic": "/map/map_projector_info",
+    "values": {
+      "projector_type": "LocalCartesian",
+      "vertical_datum": "WGS84",
+      "latitude": 51.08080935188234,
+      "longitude": -114.1331143659806,
+      "altitude": 0.0,
+      "scale_factor": 1.0
+    }
+  },
+  "pointcloud_map": {
+    "result": "SUCCESS",
+    "source": "pointcloud_map_georeferenced.pcd via experimental_viz_package symlink",
+    "topic": "/map/pointcloud_map",
+    "frame_id": "map",
+    "width_points": 1004344
+  },
+  "lanelet2_map": {
+    "result": "FAILED",
+    "file": "finalMap.osm",
+    "reason": "lanelet2_map_loader parse errors: ways reference missing nodes / empty ways; broken traffic_light regulatory elements. Failure is OSM integrity, not projector YAML.",
+    "log": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/intermediate/experimental_load_test/lanelet2_loader.log"
+  },
+  "overall_viz_goal": "PARTIAL — projector+PCD load; Lanelet2 does not load with this OSM as-is",
+  "preserved": [
+    "pointcloud_map.pcd (original KISS)",
+    "pointcloud_map_georeferenced.pcd",
+    "finalMap.osm",
+    "experimental_viz_package/",
+    "intermediate/experimental_load_test/"
+  ]
+}

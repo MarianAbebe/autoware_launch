@@ -1,0 +1,344 @@
+[
+  {
+    "category": "broken_way_geometry",
+    "id": 57375,
+    "kind": "way",
+    "msg": "Way 57375: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 57377,
+    "kind": "way",
+    "msg": "Way 57377: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 10736,
+    "kind": "way",
+    "msg": "Way 10736: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 54565,
+    "kind": "way",
+    "msg": "Way 54565: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 54566,
+    "kind": "way",
+    "msg": "Way 54566: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 22341,
+    "kind": "way",
+    "msg": "Way 22341: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 22348,
+    "kind": "way",
+    "msg": "Way 22348: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 22422,
+    "kind": "way",
+    "msg": "Way 22422: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 39139,
+    "kind": "way",
+    "msg": "Way 39139: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 39145,
+    "kind": "way",
+    "msg": "Way 39145: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 39146,
+    "kind": "way",
+    "msg": "Way 39146: Ways must have at least one point!",
+    "tags": {}
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 56837,
+    "kind": "way",
+    "msg": "Way 56837: Ways must have at least one point!",
+    "tags": {
+      "subtype": "red_redYellow_green_yellow",
+      "type": "traffic_light"
+    }
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 56841,
+    "kind": "way",
+    "msg": "Way 56841: Ways must have at least one point!",
+    "tags": {
+      "subtype": "red_redYellow_green_yellow",
+      "type": "traffic_light"
+    }
+  },
+  {
+    "category": "broken_way_geometry",
+    "id": 56845,
+    "kind": "way",
+    "msg": "Way 56845: Ways must have at least one point!",
+    "tags": {
+      "subtype": "red_redYellow_green_yellow",
+      "type": "traffic_light"
+    }
+  },
+  {
+    "category": "missing_references",
+    "id": 1511982565,
+    "kind": "way",
+    "msg": "Way 1511982565 references nonexisting points [13817418538]",
+    "missing_nodes": [
+      13817418538
+    ],
+    "tags": {
+      "service": "parking_aisle",
+      "highway": "service"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 54567,
+    "kind": "lanelet",
+    "msg": "Lanelet 54567 has not exactly one left border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 54567,
+    "kind": "lanelet",
+    "msg": "Lanelet 54567 has not exactly one right border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 22342,
+    "kind": "lanelet",
+    "msg": "Lanelet 22342 has not exactly one left border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 22342,
+    "kind": "lanelet",
+    "msg": "Lanelet 22342 has not exactly one right border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 22349,
+    "kind": "lanelet",
+    "msg": "Lanelet 22349 has not exactly one left border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 22349,
+    "kind": "lanelet",
+    "msg": "Lanelet 22349 has not exactly one right border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 22423,
+    "kind": "lanelet",
+    "msg": "Lanelet 22423 has not exactly one left border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 22423,
+    "kind": "lanelet",
+    "msg": "Lanelet 22423 has not exactly one right border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 39140,
+    "kind": "lanelet",
+    "msg": "Lanelet 39140 has not exactly one left border! (count=0)",
+    "members": [
+      [
+        "way",
+        39138,
+        "right"
+      ],
+      [
+        "way",
+        -958,
+        ""
+      ]
+    ],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 39147,
+    "kind": "lanelet",
+    "msg": "Lanelet 39147 has not exactly one left border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 39147,
+    "kind": "lanelet",
+    "msg": "Lanelet 39147 has not exactly one right border! (count=0)",
+    "members": [],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "disconnected_lanelets",
+    "id": 10738,
+    "kind": "lanelet",
+    "msg": "Lanelet 10738 has not exactly one left border! (count=0)",
+    "members": [
+      [
+        "way",
+        10737,
+        "right"
+      ],
+      [
+        "relation",
+        57166,
+        "regulatory_element"
+      ]
+    ],
+    "tags": {
+      "subtype": "road",
+      "location": "urban",
+      "type": "lanelet"
+    }
+  },
+  {
+    "category": "traffic_light_inconsistencies",
+    "id": 57376,
+    "kind": "regulatory_element",
+    "msg": "RegulatoryElement 57376: Creating a regulatory element of type traffic_light failed: No traffic light defined!",
+    "members": [],
+    "tags": {
+      "subtype": "traffic_light",
+      "type": "regulatory_element"
+    }
+  },
+  {
+    "category": "traffic_light_inconsistencies",
+    "id": 57378,
+    "kind": "regulatory_element",
+    "msg": "RegulatoryElement 57378: Creating a regulatory element of type traffic_light failed: No traffic light defined!",
+    "members": [],
+    "tags": {
+      "subtype": "traffic_light",
+      "type": "regulatory_element"
+    }
+  },
+  {
+    "category": "traffic_light_inconsistencies",
+    "id": 57164,
+    "kind": "regulatory_element",
+    "msg": "RegulatoryElement 57164: Creating a regulatory element of type traffic_light failed: No traffic light defined!",
+    "members": [
+      [
+        "way",
+        57163,
+        "ref_line"
+      ]
+    ],
+    "tags": {
+      "subtype": "traffic_light",
+      "type": "regulatory_element"
+    }
+  },
+  {
+    "category": "traffic_light_inconsistencies",
+    "id": 57166,
+    "kind": "regulatory_element",
+    "msg": "RegulatoryElement 57166: Creating a regulatory element of type traffic_light failed: No traffic light defined!",
+    "members": [
+      [
+        "way",
+        57165,
+        "ref_line"
+      ]
+    ],
+    "tags": {
+      "subtype": "traffic_light",
+      "type": "regulatory_element"
+    }
+  }
+]

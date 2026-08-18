@@ -1,0 +1,260 @@
+{
+  "actions": [
+    {
+      "action": "delete_empty_way",
+      "way_id": 57375,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 57377,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 10736,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 54565,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 54566,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 22341,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 22348,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 22422,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 39139,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 39145,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 39146,
+      "tags": {}
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 56837,
+      "tags": {
+        "subtype": "red_redYellow_green_yellow",
+        "type": "traffic_light"
+      }
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 56841,
+      "tags": {
+        "subtype": "red_redYellow_green_yellow",
+        "type": "traffic_light"
+      }
+    },
+    {
+      "action": "delete_empty_way",
+      "way_id": 56845,
+      "tags": {
+        "subtype": "red_redYellow_green_yellow",
+        "type": "traffic_light"
+      }
+    },
+    {
+      "action": "remove_missing_nd_from_way",
+      "way_id": 1511982565,
+      "node_id": 13817418538
+    },
+    {
+      "action": "delete_invalid_traffic_light_regulatory_element",
+      "relation_id": 57376,
+      "tags": {
+        "subtype": "traffic_light",
+        "type": "regulatory_element"
+      },
+      "members": []
+    },
+    {
+      "action": "delete_invalid_traffic_light_regulatory_element",
+      "relation_id": 57378,
+      "tags": {
+        "subtype": "traffic_light",
+        "type": "regulatory_element"
+      },
+      "members": []
+    },
+    {
+      "action": "delete_invalid_traffic_light_regulatory_element",
+      "relation_id": 57164,
+      "tags": {
+        "subtype": "traffic_light",
+        "type": "regulatory_element"
+      },
+      "members": []
+    },
+    {
+      "action": "delete_invalid_traffic_light_regulatory_element",
+      "relation_id": 57166,
+      "tags": {
+        "subtype": "traffic_light",
+        "type": "regulatory_element"
+      },
+      "members": []
+    },
+    {
+      "action": "strip_missing_members",
+      "relation_id": 10558,
+      "removed": [
+        [
+          "relation",
+          57164,
+          "regulatory_element"
+        ]
+      ],
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      }
+    },
+    {
+      "action": "strip_missing_members",
+      "relation_id": 10738,
+      "removed": [
+        [
+          "relation",
+          57166,
+          "regulatory_element"
+        ]
+      ],
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      }
+    },
+    {
+      "action": "delete_broken_lanelet",
+      "relation_id": 54567,
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      },
+      "members": [],
+      "reason": "left=[] right=[]"
+    },
+    {
+      "action": "delete_broken_lanelet",
+      "relation_id": 22342,
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      },
+      "members": [],
+      "reason": "left=[] right=[]"
+    },
+    {
+      "action": "delete_broken_lanelet",
+      "relation_id": 22349,
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      },
+      "members": [],
+      "reason": "left=[] right=[]"
+    },
+    {
+      "action": "delete_broken_lanelet",
+      "relation_id": 22423,
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      },
+      "members": [],
+      "reason": "left=[] right=[]"
+    },
+    {
+      "action": "delete_broken_lanelet",
+      "relation_id": 39140,
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      },
+      "members": [
+        [
+          "way",
+          39138,
+          "right"
+        ],
+        [
+          "way",
+          -958,
+          ""
+        ]
+      ],
+      "reason": "left=[] right=[('way', 39138, 'right')]"
+    },
+    {
+      "action": "delete_broken_lanelet",
+      "relation_id": 39147,
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      },
+      "members": [],
+      "reason": "left=[] right=[]"
+    },
+    {
+      "action": "delete_broken_lanelet",
+      "relation_id": 10738,
+      "tags": {
+        "subtype": "road",
+        "location": "urban",
+        "type": "lanelet"
+      },
+      "members": [
+        [
+          "way",
+          10737,
+          "right"
+        ]
+      ],
+      "reason": "left=[] right=[('way', 10737, 'right')]"
+    },
+    {
+      "action": "delete_degenerate_way_lt_2_points",
+      "way_id": 1511982565,
+      "n_points": 1,
+      "tags": {
+        "service": "parking_aisle",
+        "highway": "service"
+      },
+      "was_border": false
+    }
+  ]
+}

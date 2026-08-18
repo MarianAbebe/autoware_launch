@@ -1,0 +1,6 @@
+[gnss_pose_altitude_corrector.py-12] [INFO] [1786727719.707030564] [sensing.gnss.eng_dock_gnss_pose_altitude_corrector]: GNSS motion heading ready: raw=-37.1 deg corrected=-37.1 deg (travel 1.5 m, offset 0.0 deg)
+[initialize_after_ready.py-25] [INFO] [1786727741.294343116] [eng_dock_initialize_after_ready]: Seeding localization via /initialpose3d xyz=(9.26,-3.70,-2.05) yaw_deg=-21.8 gnss=1520 lidar=60 recent_lidar=5
+[initialize_after_ready.py-25] [INFO] [1786727741.705303168] [eng_dock_initialize_after_ready]: NDT trigger(True) ok=True msg=
+[autoware_ndt_scan_matcher_node-15] [WARN] [1786727741.847012655] [localization.pose_estimator.ndt_scan_matcher]: Lidar has gone out of the map range
+[initialize_after_ready.py-25] [INFO] [1786727742.709136692] [eng_dock_initialize_after_ready]: Localization seed complete; EKF publishing and NDT scan matcher activated
+[autoware_ndt_scan_matcher_node-15] [WARN] [1786727753.561196119] [localization.pose_estimator.ndt_scan_matcher]: Lidar has gone out of the map range

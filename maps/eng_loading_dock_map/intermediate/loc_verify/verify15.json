@@ -1,0 +1,20 @@
+{
+  "counts": {
+    "gnss": 2461,
+    "down": 314
+  },
+  "rates_hz": {
+    "ndt_pwc": 0.0,
+    "ndt_pose": 0.0,
+    "nvtl": 0.0,
+    "ekf": 0.0,
+    "gnss": 27.344444444444445,
+    "down": 3.488888888888889,
+    "synced": 0.0
+  },
+  "nvtl_n": 0,
+  "nvtl_median": null,
+  "nvtl_max": null,
+  "ekf_gnss_n": 0,
+  "ekf_gnss_median_m": null
+}

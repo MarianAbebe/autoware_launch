@@ -1,0 +1,31 @@
+{
+  "path": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map.pcd",
+  "exists": true,
+  "size_bytes": 16069688,
+  "n_points_open3d": 1004344,
+  "empty": false,
+  "min_xyz": [
+    -75.82665252685547,
+    -54.276145935058594,
+    -6.913779258728027
+  ],
+  "max_xyz": [
+    97.1466293334961,
+    136.0303955078125,
+    28.503192901611328
+  ],
+  "mean_xyz": [
+    15.683560656902158,
+    33.48789275627829,
+    3.1609711209924596
+  ],
+  "bbox_diagonal_m": 259.59718386472167,
+  "points_per_m3": 0.8614663484886131,
+  "nn_distance_mean_m": 1.5195701308504903,
+  "nn_distance_median_m": 1.2625792688211135,
+  "z_span_m": 35.416972160339355,
+  "quality_flags": [
+    "sparse_nn_spacing"
+  ],
+  "quality_verdict": "suspect_poor"
+}

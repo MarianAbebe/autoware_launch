@@ -1,0 +1,48 @@
+Launching localization_replay...
+Playing bag...
+Waiting for EKF+NDT seed (up to 300s)...
+Seed complete after 37s
+Probing 120s with use_sim_time...
+{
+  "counts": {
+    "gnss": 6003,
+    "ekf": 4802,
+    "map_base_tf": 4800,
+    "down": 223,
+    "nvtl": 129,
+    "ndt_pwc": 83,
+    "ndt_pose": 83,
+    "map_ndt_base_tf": 129,
+    "aligned": 129
+  },
+  "rates_hz": {
+    "down": 1.8583333333333334,
+    "ndt_pwc": 0.6916666666666667,
+    "ndt_pose": 0.6916666666666667,
+    "aligned": 1.075,
+    "nvtl": 1.075,
+    "map_base_tf": 40.0,
+    "map_ndt_base_tf": 1.075,
+    "ekf": 40.016666666666666,
+    "gnss": 50.025
+  },
+  "ndt_score_nvtl": {
+    "n": 129,
+    "median": 2.3402881622314453,
+    "p95": 3.1071202754974365,
+    "max": 3.159705877304077
+  },
+  "ekf_gnss_pos_delta_m": {
+    "n": 4802,
+    "median": 3.295314124350243,
+    "p95": 4.960916231444692,
+    "max": 5.0543947304827395
+  },
+  "ekf_gnss_yaw_delta_deg": {
+    "n": 4802,
+    "median": 64.49007248817969,
+    "p95": 165.13350448727306,
+    "max": 179.98002754174888
+  }
+}
+Done. Results: /home/agxorin/autoware_data/maps/eng_loading_dock_map/intermediate/loc_verify/verify13.json

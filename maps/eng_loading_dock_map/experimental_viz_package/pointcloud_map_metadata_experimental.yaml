@@ -1,0 +1,7 @@
+# EXPERIMENTAL PCD metadata for single-file whole-map load (Autoware format).
+# Format from autoware_map_loader README / test_load_pcd_metadata.cpp:
+#   name.pcd: [min_x, min_y] with cell size x_resolution x y_resolution
+# Georeferenced PCD XY bbox approx [-80,-77] .. [123,120]; use one large cell.
+x_resolution: 250.0
+y_resolution: 250.0
+pointcloud_map.pcd: [-80.0, -80.0]

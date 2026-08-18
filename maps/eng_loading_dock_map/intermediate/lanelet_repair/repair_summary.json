@@ -1,0 +1,22 @@
+{
+  "source": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/finalMap.osm",
+  "output": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/finalMap_repaired.osm",
+  "errors_before": 31,
+  "errors_after": 0,
+  "categories_before": {
+    "broken_way_geometry": 14,
+    "missing_references": 1,
+    "disconnected_lanelets": 12,
+    "traffic_light_inconsistencies": 4
+  },
+  "categories_after": {},
+  "n_actions": 29,
+  "action_types": {
+    "delete_empty_way": 14,
+    "remove_missing_nd_from_way": 1,
+    "delete_invalid_traffic_light_regulatory_element": 4,
+    "strip_missing_members": 2,
+    "delete_broken_lanelet": 7,
+    "delete_degenerate_way_lt_2_points": 1
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "n_map_points": 1004344,
+  "map_bbox_diag_m": 259.59718386472167,
+  "map_z_span_m": 35.416972160339355,
+  "occupied_1m_voxels": 39163,
+  "median_points_per_occupied_1m_voxel": 14.0,
+  "knn_nn_median_m": 0.14138024414792655,
+  "knn_nn_mean_m": 0.14328755034585292,
+  "possible_vertical_double_layer_frac": 0.0,
+  "kiss_traj_length_m": 295.1218457524691,
+  "kiss_net_displacement_m": 62.937686837699495,
+  "kiss_z_span_traj_m": 4.199838885121332,
+  "gnss_traj_length_m": 203.94642376580558,
+  "gnss_net_displacement_m": 62.38520158180838,
+  "gnss_bbox_diag_m": 83.75995185975209,
+  "traj_length_ratio_kiss_over_gnss": 1.4470557526978824,
+  "preview": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/results/topdown_preview.png",
+  "limitations": [
+    "Map frame is KISS-ICP odometry, not Autoware map/MGRS/UTM",
+    "GNSS not fused; no georeference to Carter Lanelet2 yet",
+    "Extrinsics LiDAR<->base_link unknown (null calibrations)",
+    "Odometry-only: no loop closure \u2014 drift expected over ~5\u20138 min"
+  ],
+  "quality_flags": [
+    "visual_double_walls_ghosting",
+    "fuzzy_structure_boundaries",
+    "odometry_path_length_1.45x_gnss",
+    "no_loop_closure",
+    "not_georeferenced"
+  ],
+  "quality_verdict": "poor_for_autoware_localization_as_is",
+  "visual_review": "topdown_preview.png shows parallel ghost walls / thickened edges; treat as failed localization-grade map"
+}

@@ -1,0 +1,6 @@
+# EXPERIMENTAL metadata for viz load only
+x_resolution: 100.0
+y_resolution: 100.0
+# single-file whole map: abs path -> [min_x, min_y, max_x, max_y]
+/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map_georeferenced.pcd:
+  - [-79.563538, -76.590050, 122.839691, 119.276711]

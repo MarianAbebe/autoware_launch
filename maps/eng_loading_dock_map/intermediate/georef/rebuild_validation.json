@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-08-13T13:48:36",
+  "bag": "/home/agxorin/Desktop/engg_loading_dock_01_gnss",
+  "kiss_poses_kitti": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/intermediate/full_run/latest/engg_loading_dock_01_gnss_poses_kitti.txt",
+  "georef_report": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/intermediate/georef/georef_alignment_report.json",
+  "scale_applied": 0.690105258622833,
+  "path_length_ratio_kiss_over_gnss_report": 1.4490543109258285,
+  "kiss_path_length_m": 295.1218457524691,
+  "scaled_kiss_path_length_m": 203.66513768825547,
+  "georef_path_length_m": 203.66513768825556,
+  "gnss_path_length_m_report": 203.66479470795062,
+  "scaled_to_gnss_ratio": 1.0000016840431618,
+  "n_map_points": 3804549,
+  "n_scans_in_map": 2459,
+  "map_voxel_m": 0.2,
+  "scan_stride": 2,
+  "bbox_min_xyz": [
+    -76.50173106927647,
+    -90.46644378609878,
+    -5.625672603473302
+  ],
+  "bbox_max_xyz": [
+    112.21616731096856,
+    107.0996887406963,
+    23.053820337427993
+  ],
+  "runtime_s": 128.27432935700017,
+  "backup_pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map.pcd.pre_rebuild_backup",
+  "output_pcd": "/home/agxorin/autoware_data/maps/eng_loading_dock_map/pointcloud_map.pcd",
+  "se3_rmse_m_report": 0.7353288002361517,
+  "enu_origin_lla": {
+    "latitude": 51.08080935188234,
+    "longitude": -114.1331143659806,
+    "altitude": 1094.7826704429463
+  }
+}

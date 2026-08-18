@@ -1,0 +1,3 @@
+[console_scripts]
+ouster-cli = ouster.cli.core:run
+simple-viz = ouster.sdk.simple_viz:main
