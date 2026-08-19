@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="map_path" description="point cloud and lanelet2 map directory path"/>
+  <arg name="vehicle_model" default="sample_vehicle" description="vehicle model name"/>
+  <arg name="vehicle_id" default="$(env VEHICLE_ID default)" description="vehicle specific ID"/>
+  <arg name="pointcloud_container_name" default="pointcloud_container"/>
+
+  <arg name="lanelet2_map_file" default="lanelet2_map.osm" description="lanelet2 map file name"/>
+  <arg name="pointcloud_map_file" default="pointcloud_map.pcd" description="pointcloud map file name"/>
+  <arg name="rviz" default="false" description="launch rviz"/>
+
+  <!-- Replay-specific variant of logging_simulator.launch.xml:
+       use the same upstream autoware.launch.xml entry point, but replace only the
+       localization component with an NDT + pose-initializer replay component. -->
+  <include file="$(find-pkg-share autoware_launch)/launch/autoware.launch.xml">
+    <arg name="map_path" value="$(var map_path)"/>
+    <arg name="vehicle_model" value="$(var vehicle_model)"/>
+    <arg name="sensor_model" value="eng_loading_dock_sensor_kit"/>
+
+    <arg name="launch_vehicle" value="true"/>
+    <arg name="launch_map" value="true"/>
+    <arg name="launch_sensing" value="true"/>
+    <arg name="launch_localization" value="true"/>
+    <arg name="launch_perception" value="false"/>
+    <arg name="launch_planning" value="false"/>
+    <arg name="launch_control" value="false"/>
+
+    <arg name="use_sim_time" value="true"/>
+    <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
+
+    <arg name="vehicle_id" value="$(var vehicle_id)"/>
+    <arg name="launch_vehicle_interface" value="false"/>
+    <arg name="launch_system" value="false"/>
+    <arg name="system_run_mode" value="logging_simulation"/>
+    <arg name="launch_system_monitor" value="false"/>
+    <arg name="launch_dummy_diag_publisher" value="false"/>
+
+    <arg name="lanelet2_map_file" value="$(var lanelet2_map_file)"/>
+    <arg name="pointcloud_map_file" value="$(var pointcloud_map_file)"/>
+
+    <arg name="launch_sensing_driver" value="false"/>
+    <arg
+      name="localization_component_launch_path"
+      value="$(find-pkg-share eng_loading_dock_sensor_kit_launch)/launch/localization_component.replay_ndt.launch.xml"
+    />
+    <arg
+      name="pose_initializer_param_path"
+      value="$(find-pkg-share autoware_launch)/config/localization/pose_initializer.logging_simulation.param.yaml"
+    />
+    <arg
+      name="ndt_scan_matcher_param_path"
+      value="$(find-pkg-share eng_loading_dock_sensor_kit_launch)/config/ndt_scan_matcher.eng_loading_dock.param.yaml"
+    />
+    <arg name="launch_automatic_pose_initializer" value="false"/>
+    <arg name="ndt_input_initial_pose_topic" value="/localization/pose_twist_fusion_filter/biased_pose_with_covariance"/>
+    <arg name="rviz" value="$(var rviz)"/>
+  </include>
+</launch>
