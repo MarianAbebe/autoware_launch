@@ -6,6 +6,11 @@
   <arg name="pointcloud_container_name" default="pointcloud_container"/>
 
   <arg name="lanelet2_map_file" default="lanelet2_map.osm" description="lanelet2 map file name"/>
+  <arg
+    name="localization_component_launch_path"
+    default="$(find-pkg-share autoware_launch)/launch/components/tier4_localization_component.launch.xml"
+    description="Override localization component launch file (use the friend's updated localization fix XML here)"
+  />
   <arg name="pointcloud_map_file" default="pointcloud_map.pcd" description="pointcloud map file name"/>
   <arg name="rviz" default="false" description="launch rviz"/>
 
@@ -39,6 +44,10 @@
     <arg name="pointcloud_map_file" value="$(var pointcloud_map_file)"/>
     <arg name="launch_sensing_driver" value="false"/>
     <arg name="rviz" value="$(var rviz)"/>
+    <arg
+      name="localization_component_launch_path"
+      value="$(var localization_component_launch_path)"
+    />
     <arg
       name="rviz_config"
       value="$(find-pkg-share eng_loading_dock_sensor_kit_launch)/config/eng_loading_dock.rviz"

@@ -224,8 +224,8 @@ Visualization Manager:
           Axis: Z
           Channel Name: intensity
           Class: rviz_default_plugins/PointCloud2
-          Color: 255; 180; 40
-          Color Transformer: FlatColor
+          Color: 255; 255; 255
+          Color Transformer: AxisColor
           Decay Time: 0
           Enabled: true
           Invert Rainbow: false
@@ -236,9 +236,9 @@ Visualization Manager:
           Name: PointCloudMap
           Position Transformer: XYZ
           Selectable: false
-          Size (Pixels): 3
-          Size (m): 0.4000000059604645
-          Style: Flat Squares
+          Size (Pixels): 1
+          Size (m): 0.05000000074505806
+          Style: Points
           Topic:
             Depth: 5
             Durability Policy: Transient Local
